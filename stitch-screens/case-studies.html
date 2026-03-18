@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#001e2c",
+              "surface-dim": "#d9dadb",
+              "on-tertiary-container": "#badef6",
+              "on-secondary-fixed": "#00201a",
+              "surface-bright": "#f8f9fa",
+              "background": "#f8f9fa",
+              "on-primary-fixed": "#001847",
+              "surface-container-low": "#f3f4f5",
+              "surface": "#f8f9fa",
+              "inverse-primary": "#b2c5ff",
+              "error-container": "#ffdad6",
+              "on-background": "#191c1d",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-tint": "#0856cf",
+              "on-surface-variant": "#424654",
+              "primary-fixed-dim": "#b2c5ff",
+              "tertiary": "#274b5f",
+              "outline-variant": "#c3c6d6",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#00705f",
+              "secondary": "#006b5b",
+              "primary": "#0041a2",
+              "outline": "#737785",
+              "surface-variant": "#e1e3e4",
+              "on-primary-container": "#ced9ff",
+              "tertiary-fixed-dim": "#a7cbe3",
+              "on-primary": "#ffffff",
+              "on-surface": "#191c1d",
+              "secondary-fixed-dim": "#2adec0",
+              "primary-container": "#0b57d0",
+              "tertiary-container": "#406377",
+              "surface-container-highest": "#e1e3e4",
+              "on-secondary-fixed-variant": "#005144",
+              "surface-container-high": "#e7e8e9",
+              "on-error": "#ffffff",
+              "surface-container": "#edeeef",
+              "secondary-fixed": "#57fbdb",
+              "tertiary-fixed": "#c3e7ff",
+              "secondary-container": "#53f8d9",
+              "inverse-surface": "#2e3132",
+              "primary-fixed": "#dae2ff",
+              "on-tertiary-fixed-variant": "#264b5e",
+              "on-primary-fixed-variant": "#0040a1"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #0041a2 0%, #006b5b 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-sm dark:shadow-none">
+<nav class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-2"><img alt="Automation Intelligence Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCChaVOB58JfCgyh-yMSkDb8HCeIczSEXnlLEPm5eWjuEo30kQaBL3un9f4Y6C21cK0fvxEq1eOkT6ihjqrYd14i7Axov6kGNOknX4UGDJ1bDJOvoDiS5Y9-DQZSnTzh_WbGw7yKXnhkCAP32mBz_NCaYhrFfmJ2hTkmToUIiYGZeniPdO4ewiJdpW-dTM_SpDW3m-s5jFwqffvsJxK4AEYmCpnuA0t3Bma-4RhDOgF2a1XABaB6u2JruzDKQ1HfUGyA0xmHnRPvv7W"/></div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-500 font-semibold text-sm hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="text-slate-500 font-semibold text-sm hover:opacity-80 transition-opacity" href="#">Services</a>
+<a class="text-blue-600 font-bold text-sm" href="#">Insights</a>
+<a class="text-slate-500 font-semibold text-sm hover:opacity-80 transition-opacity" href="#">Contact</a>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden border-2 border-primary/10">
+<img alt="Agency Profile" class="w-full h-full object-cover" data-alt="Corporate minimalist user avatar profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVXZuHs_cs1SGy1n86SOc_h3Z9w_FK4RTHddVmn12ojuxRyruf4cs7EnVqjE0wWNueem-4iAkiadVfvs_qFOK_zTfqR4IqPqEOyHoc1_iGDiRE_zrcu-RBbcqLrn4ieLaDucmQAaCFmgFeJuL4KnKH5IVdWmcwCIyiak3NupAn4RQ0hIY3HEYPEq5mN4n07dDKFdM15iYYFscO6C9LstTTxgpr4NuFsxGc3EDaiY4NIAcEIMb8YK858R4-mGfIdzW8OKmOacBPEIIK"/>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+<!-- Hero Title Section -->
+<section class="mb-20">
+<div class="inline-block px-4 py-1.5 mb-6 rounded-full bg-secondary-container/20 border border-secondary/10">
+<span class="text-secondary font-label text-[10px] font-semibold uppercase tracking-widest">Case Studies</span>
+</div>
+<h1 class="text-6xl md:text-8xl font-headline font-extrabold tracking-tighter mb-8 leading-[0.9]">
+                Real Results.
+            </h1>
+<p class="max-w-2xl text-on-surface-variant text-lg md:text-xl font-body leading-relaxed">
+                We bridge the gap between speculative AI and operational excellence. Discover how our Node and Nexus Ai transforms complex data into measurable competitive advantages.
+            </p>
+</section>
+<!-- Case Studies Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Case Study 1: E-commerce -->
+<div class="md:col-span-7 group">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low transition-all duration-500 hover:bg-surface-container-high p-8 md:p-12 h-full flex flex-col justify-between">
+<div class="flex justify-between items-start mb-12">
+<div class="w-16 h-16 rounded-2xl bg-primary-container flex items-center justify-center text-on-primary-container shadow-lg">
+<span class="material-symbols-outlined text-3xl" data-icon="shopping_bag">shopping_bag</span>
+</div>
+<div class="text-right">
+<span class="block text-4xl font-headline font-black text-primary">+40%</span>
+<span class="text-xs font-label uppercase tracking-widest text-outline">ROI Growth</span>
+</div>
+</div>
+<div>
+<h3 class="text-3xl md:text-4xl font-headline font-bold mb-4">E-commerce Giant</h3>
+<p class="text-on-surface-variant text-lg mb-8 leading-relaxed">
+                            How we implemented an autonomous supply chain and predictive inventory system that scaled revenue while minimizing overhead waste.
+                        </p>
+<button class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-primary text-on-primary font-semibold hover:bg-gradient-to-r from-primary to-secondary transition-all active:scale-95">
+                            View Full Report
+                            <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="absolute -bottom-12 -right-12 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+<span class="material-symbols-outlined text-[12rem]" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+</div>
+<!-- Side Card / Statistic -->
+<div class="md:col-span-5 flex flex-col gap-8">
+<div class="bg-primary-container rounded-xl p-8 text-on-primary-container flex-1 relative overflow-hidden">
+<h4 class="text-xl font-headline font-bold mb-2">Impact Measured</h4>
+<p class="text-sm opacity-80 mb-6">Aggregate performance across our client portfolio for Q3 2024.</p>
+<div class="space-y-4">
+<div class="flex justify-between items-end border-b border-white/10 pb-2">
+<span class="font-label text-xs uppercase tracking-tighter opacity-70">Latency Reduction</span>
+<span class="font-headline font-bold text-2xl">82%</span>
+</div>
+<div class="flex justify-between items-end border-b border-white/10 pb-2">
+<span class="font-label text-xs uppercase tracking-tighter opacity-70">Human Hours Saved</span>
+<span class="font-headline font-bold text-2xl">14.5k</span>
+</div>
+<div class="flex justify-between items-end">
+<span class="font-label text-xs uppercase tracking-tighter opacity-70">System Uptime</span>
+<span class="font-headline font-bold text-2xl">99.9%</span>
+</div>
+</div>
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-4xl" data-icon="query_stats">query_stats</span>
+</div>
+</div>
+</div>
+<!-- Case Study 2: Fintech -->
+<div class="md:col-span-12 group">
+<div class="grid md:grid-cols-2 bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-500">
+<div class="p-8 md:p-16 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 mb-6 text-secondary">
+<span class="material-symbols-outlined" data-icon="verified" data-weight="fill" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label text-xs font-bold uppercase tracking-widest">Fintech Leader</span>
+</div>
+<h3 class="text-4xl md:text-5xl font-headline font-extrabold mb-6 tracking-tight">Custom LLMs reduced operational costs.</h3>
+<p class="text-on-surface-variant text-lg mb-10 leading-relaxed max-w-md">
+                            By deploying proprietary large language models for automated risk assessment, we slashed processing times from days to seconds while cutting operational expenses.
+                        </p>
+<div class="flex gap-4">
+<a class="text-primary font-bold border-b-2 border-primary/20 hover:border-primary transition-colors py-1" href="#">Case study details</a>
+</div>
+</div>
+<div class="relative min-h-[400px] bg-slate-900 overflow-hidden">
+<img alt="Data Visualization" class="w-full h-full object-cover opacity-60 mix-blend-luminosity" data-alt="Deep blue abstract digital data visualization of fintech growth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlygGrcMBVQ3HEvTuJ4IkaMP-UNwMcOn0-HYsczmAkVU-VBg08BXGg2sOdzL7t1q9LJ8vxs-FyVC_grlUQcGNyWslgrjTm2f0VovkNbRvmyh9ifO2UH584gajQfZn-A1sE1_xpUwnE0VHzLezn6oB97cVS3VhnkIawOC0SI8hiP4zlimFSb7esHmN2PViDQEgxB4IgD-aWGmlXNMLpVZJpjUaL-HxmDqT0LOC0DgsG8D76ZqQU7sHdk3r_oh5YFOAD7AwFjFOFsspg"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/40 to-transparent"></div>
+<div class="absolute bottom-8 left-8 p-6 glass-card rounded-lg border border-white/20">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="account_balance">account_balance</span>
+</div>
+<div>
+<p class="text-xs font-label uppercase text-slate-400">Total Savings</p>
+<p class="text-xl font-headline font-bold">$2.4M Annually</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Call to Action Section -->
+<section class="mt-32 text-center py-24 rounded-xl bg-surface-container-high relative overflow-hidden">
+<div class="relative z-10 px-6">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold mb-6">Ready for your transformation?</h2>
+<p class="text-on-surface-variant mb-10 max-w-xl mx-auto text-lg">
+                    Join the industry leaders leveraging "The Node and Nexus Ai" to automate their future.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="px-10 py-5 rounded-full bg-primary text-on-primary font-bold shadow-xl active:scale-95 transition-transform">Book a Strategy Call</button>
+<button class="px-10 py-5 rounded-full bg-surface-container-lowest text-primary font-bold active:scale-95 transition-transform">Explore More Work</button>
+</div>
+</div>
+<!-- Decorative Shapes -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/5 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+<div class="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full -ml-48 -mb-48 blur-3xl"></div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-12 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col items-center gap-6 px-8 py-12 mb-24">
+<span class="font-manrope font-extrabold text-blue-900 dark:text-blue-100 text-2xl tracking-tighter">GEN_AUTO</span>
+<div class="flex gap-8">
+<a class="font-inter text-sm text-slate-500 hover:text-teal-500 transition-colors" href="#">Privacy</a>
+<a class="font-inter text-sm text-slate-500 hover:text-teal-500 transition-colors" href="#">Terms</a>
+<a class="font-inter text-sm text-slate-500 hover:text-teal-500 transition-colors" href="#">API Status</a>
+</div>
+<p class="font-inter text-sm text-slate-500">© 2024 Node and Nexus Ai. Built for scale.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 w-full rounded-t-[3rem] z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-t border-slate-100/10 shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="home_app_logo">home_app_logo</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Services</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full px-5 py-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="neurology">neurology</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Insights</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Contact</span>
+</div>
+</div>
+</nav>
+</body></html>

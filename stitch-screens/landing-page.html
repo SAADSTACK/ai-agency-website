@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#001e2c",
+              "surface-dim": "#d9dadb",
+              "on-tertiary-container": "#badef6",
+              "on-secondary-fixed": "#00201a",
+              "surface-bright": "#f8f9fa",
+              "background": "#f8f9fa",
+              "on-primary-fixed": "#001847",
+              "surface-container-low": "#f3f4f5",
+              "surface": "#f8f9fa",
+              "inverse-primary": "#b2c5ff",
+              "error-container": "#ffdad6",
+              "on-background": "#191c1d",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-tint": "#0856cf",
+              "on-surface-variant": "#424654",
+              "primary-fixed-dim": "#b2c5ff",
+              "tertiary": "#274b5f",
+              "outline-variant": "#c3c6d6",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#00705f",
+              "secondary": "#006b5b",
+              "primary": "#0041a2",
+              "outline": "#737785",
+              "surface-variant": "#e1e3e4",
+              "on-primary-container": "#ced9ff",
+              "tertiary-fixed-dim": "#a7cbe3",
+              "on-primary": "#ffffff",
+              "on-surface": "#191c1d",
+              "secondary-fixed-dim": "#2adec0",
+              "primary-container": "#0b57d0",
+              "tertiary-container": "#406377",
+              "surface-container-highest": "#e1e3e4",
+              "on-secondary-fixed-variant": "#005144",
+              "surface-container-high": "#e7e8e9",
+              "on-error": "#ffffff",
+              "surface-container": "#edeeef",
+              "secondary-fixed": "#57fbdb",
+              "tertiary-fixed": "#c3e7ff",
+              "secondary-container": "#53f8d9",
+              "inverse-surface": "#2e3132",
+              "primary-fixed": "#dae2ff",
+              "on-tertiary-fixed-variant": "#264b5e",
+              "on-primary-fixed-variant": "#0040a1"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .gradient-cta {
+            background: linear-gradient(135deg, #0041a2 0%, #006b5b 100%);
+        }
+        .asymmetric-shape {
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-sm dark:shadow-none border-none">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400 cursor-pointer active:scale-95 duration-200" data-icon="menu">menu</span>
+<img alt="Automation Intelligence Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCChaVOB58JfCgyh-yMSkDb8HCeIczSEXnlLEPm5eWjuEo30kQaBL3un9f4Y6C21cK0fvxEq1eOkT6ihjqrYd14i7Axov6kGNOknX4UGDJ1bDJOvoDiS5Y9-DQZSnTzh_WbGw7yKXnhkCAP32mBz_NCaYhrFfmJ2hTkmToUIiYGZeniPdO4ewiJdpW-dTM_SpDW3m-s5jFwqffvsJxK4AEYmCpnuA0t3Bma-4RhDOgF2a1XABaB6u2JruzDKQ1HfUGyA0xmHnRPvv7W"/>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-blue-600 dark:text-blue-400 font-manrope font-bold tracking-tight hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="text-slate-500 dark:text-slate-400 font-manrope font-bold tracking-tight hover:opacity-80 transition-opacity" href="#">Services</a>
+<a class="text-slate-500 dark:text-slate-400 font-manrope font-bold tracking-tight hover:opacity-80 transition-opacity" href="#">Insights</a>
+<a class="text-slate-500 dark:text-slate-400 font-manrope font-bold tracking-tight hover:opacity-80 transition-opacity" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/15">
+<img alt="Agency Profile" class="w-full h-full object-cover" data-alt="Stylized avatar icon for professional profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7txjaVpnU0iIQNWzsTR20hmP184E1_zdKLJEniayJDQD06W2s5kQysU-gCu0bYTqR55O4opkv2vfhpL1uqRBH-u6btwHJVcIumqJxhLfLBJvMTvwfq3X1M0l1n_Iz5U1OdJqe15UbU2dyTvFJCxFlZIPbU13HnN5qN9Ph6jwqoy88WwVzd-rE5aJxV3lZGjjO23Wny6eGT9Mpd9YNczjPxbLZd0yqlrUPtp90am_mkvWEpysTp0QvpANapMnkOlkgOZyaSsQreQyf"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 min-h-screen">
+<!-- Hero Section -->
+<section class="relative px-6 py-12 md:py-24 overflow-hidden">
+<!-- Tech-inspired decorative elements -->
+<div class="absolute top-20 -right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute bottom-0 left-10 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Content Column -->
+<div class="lg:col-span-7 z-10">
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low mb-8">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-[0.75rem] font-bold tracking-widest uppercase text-secondary font-label">Next-Gen Intelligence</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline leading-[1.1] tracking-tight text-on-surface mb-6">
+                        Automate Your Success with <span class="text-transparent bg-clip-text gradient-cta">Intelligent Solutions.</span>
+</h1>
+<p class="text-xl text-on-surface-variant max-w-2xl mb-10 leading-relaxed font-body">
+                        Custom AI workflows and LLMs designed to scale your business. We bridge the gap between human creativity and algorithmic efficiency.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="gradient-cta text-on-primary px-8 py-5 rounded-full font-bold text-lg shadow-lg hover:shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-200">
+                            Book a Free Consultation
+                        </button>
+<button class="bg-surface-container-high text-primary px-8 py-5 rounded-full font-bold text-lg hover:bg-surface-container-highest active:scale-95 transition-all duration-200">
+                            Explore Services
+                        </button>
+</div>
+<!-- Metrics Row -->
+<div class="mt-16 flex flex-wrap gap-8 items-center border-t border-outline-variant/15 pt-8">
+<div>
+<p class="text-3xl font-black font-headline text-on-surface">98%</p>
+<p class="text-xs font-bold uppercase tracking-widest text-outline font-label">Efficiency Gain</p>
+</div>
+<div class="w-px h-10 bg-outline-variant/30 hidden sm:block"></div>
+<div>
+<p class="text-3xl font-black font-headline text-on-surface">500+</p>
+<p class="text-xs font-bold uppercase tracking-widest text-outline font-label">Nodes Deployed</p>
+</div>
+<div class="w-px h-10 bg-outline-variant/30 hidden sm:block"></div>
+<div>
+<p class="text-3xl font-black font-headline text-on-surface">24/7</p>
+<p class="text-xs font-bold uppercase tracking-widest text-outline font-label">AI Monitoring</p>
+</div>
+</div>
+</div>
+<!-- Visual Column (Asymmetric Canvas) -->
+<div class="lg:col-span-5 relative">
+<div class="relative w-full aspect-square md:aspect-auto md:h-[600px] rounded-xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Abstract 3D visualization of neural networks and data flowing through space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCusKqSspx7SYK3Aes8VS-HoDXhAsnQz4ZRwTtEuTp2UxiH-pkzGbH7PdIfjWcNriSzG8jGuLtECYV-addjDtZi1OTZLvV3GSozv0rH9lm0wXbryv3oyGLgw3QKfvf5cqM8WCesnQzVHBoSx64EdNCwT6sKQTXpdjnzcaj9m66Q97YftUJj8jVUgzyyXwKTutP7IVQnxoef0sQu4sGymP8tueOQSd4O_n61dr9_HpcU2K7XrWzzOTevDKT3LCquwTwOiR2gpU6QPa7Q"/>
+<!-- Floating Glass Card -->
+<div class="absolute bottom-6 left-6 right-6 glass-panel p-6 rounded-lg shadow-xl border border-white/20">
+<div class="flex items-start gap-4">
+<div class="bg-secondary-container p-3 rounded-full">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="neurology">neurology</span>
+</div>
+<div>
+<h3 class="font-bold text-lg mb-1">Live AI Optimization</h3>
+<p class="text-sm text-on-surface-variant leading-snug">Scaling workflows in real-time across 12 distributed enterprise clusters.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Accent -->
+<div class="absolute -z-10 -bottom-10 -left-10 w-full h-full bg-surface-container-low rounded-xl asymmetric-shape"></div>
+</div>
+</div>
+</section>
+<!-- Bento Services Section (Secondary reinforcement) -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Feature -->
+<div class="md:col-span-2 bg-surface-container-low p-10 rounded-xl relative overflow-hidden group hover:bg-surface-container-highest transition-colors">
+<div class="max-w-md relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="precision_manufacturing">precision_manufacturing</span>
+<h2 class="text-3xl font-bold font-headline mb-4">Autonomous Workflows</h2>
+<p class="text-on-surface-variant mb-8">End-to-end automation pipelines that handle everything from data ingestion to predictive reporting without human intervention.</p>
+<a class="inline-flex items-center text-primary font-bold group-hover:gap-2 transition-all" href="#">
+                            View Case Studies <span class="material-symbols-outlined ml-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/5 rounded-full group-hover:scale-125 transition-transform duration-500"></div>
+</div>
+<!-- Smaller Feature -->
+<div class="bg-surface-container-low p-10 rounded-xl flex flex-col justify-between hover:bg-surface-container-highest transition-colors">
+<div>
+<span class="material-symbols-outlined text-secondary text-4xl mb-6" data-icon="hub">hub</span>
+<h2 class="text-2xl font-bold font-headline mb-4">Custom LLMs</h2>
+<p class="text-on-surface-variant">Fine-tuned models trained on your proprietary data for secure, context-aware AI.</p>
+</div>
+<div class="mt-8 h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[75%] rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-12 bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="flex flex-col items-center gap-6 px-8 py-12 mb-24 max-w-7xl mx-auto">
+<img alt="Automation Intelligence Logo" class="h-12 w-auto object-contain mb-2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCChaVOB58JfCgyh-yMSkDb8HCeIczSEXnlLEPm5eWjuEo30kQaBL3un9f4Y6C21cK0fvxEq1eOkT6ihjqrYd14i7Axov6kGNOknX4UGDJ1bDJOvoDiS5Y9-DQZSnTzh_WbGw7yKXnhkCAP32mBz_NCaYhrFfmJ2hTkmToUIiYGZeniPdO4ewiJdpW-dTM_SpDW3m-s5jFwqffvsJxK4AEYmCpnuA0t3Bma-4RhDOgF2a1XABaB6u2JruzDKQ1HfUGyA0xmHnRPvv7W"/>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-teal-500 transition-colors font-inter text-sm" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-teal-500 transition-colors font-inter text-sm" href="#">Terms</a>
+<a class="text-slate-500 hover:text-teal-500 transition-colors font-inter text-sm" href="#">API Status</a>
+</div>
+<p class="text-slate-500 font-inter text-sm opacity-60">© 2024 Node and Nexus Ai. Built for scale.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full rounded-t-[3rem] z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl shadow-[0_-8px_30px_rgb(0,0,0,0.04)] border-t border-slate-100/10">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<div class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full px-5 py-2 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="home_app_logo">home_app_logo</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-600 dark:hover:text-blue-400 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Services</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-600 dark:hover:text-blue-400 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="neurology">neurology</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Insights</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 hover:text-blue-600 dark:hover:text-blue-400 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Contact</span>
+</div>
+</div>
+</nav>
+</body></html>

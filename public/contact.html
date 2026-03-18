@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact & Consultation — Node and Nexus Ai</title>
+  <meta name="description" content="Connect with our AI automation specialists. Book a free consultation for custom LLM integration, workflow automation, and enterprise AI solutions."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body class="page-transition">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <button class="menu-toggle" id="menu-toggle">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <a href="/"><img src="/images/logo.jpg" alt="Node and Nexus Ai Logo" class="logo"/></a>
+      </div>
+      <nav class="nav-desktop">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/insights" class="nav-link">Insights</a>
+        <a href="/contact" class="nav-link active">Contact</a>
+      </nav>
+      <div class="header-avatar">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtfJ0es_ORn5HI3k9VlsycRmSCrPej9VHlGZ052hsjVepwO5Dp6zOR5j5tSv1hz6S6nNenG4wqfcv_09tb07VyMIr7xQETyHoxmkCjYHoYbp5GWyugFBO_jrtUwfVbxPsgb_m_fHUJBpCIL3zq5dGq3pwYfIqMFcQ5rQKKodgZ7EKyLvAPdFzEf3LC3ovcdtVng-fuTm0v78tv-Ztg5j6nZenN99xyfA1AmRplp1wDjwWwUOqYLGXN12MF8o7FKgu58olaiPuFbJvf" alt="Profile"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ MAIN CONTENT ═══ -->
+  <main style="padding-top:7rem;padding-bottom:6rem;" class="container">
+
+    <!-- ── Hero Section ── -->
+    <section style="margin-bottom:3rem;" class="animate-on-scroll">
+      <h1 style="font-size:clamp(2.5rem,7vw,4.5rem);font-weight:800;font-family:var(--font-headline);letter-spacing:-0.03em;max-width:48rem;margin-bottom:1.5rem;line-height:1.05;">
+        Let's Build the Future Together.
+      </h1>
+      <p style="font-size:1.25rem;color:var(--on-surface-variant);max-width:40rem;line-height:1.7;">
+        Connect with our AI automation specialists to redefine your workflow. Whether you're looking for custom LLM integration or scaled process automation, we're ready to engineer your solution.
+      </p>
+    </section>
+
+    <!-- ── Dynamic Bento Layout ── -->
+    <div class="contact-grid">
+
+      <!-- Contact Form Card -->
+      <div class="contact-form-card animate-on-scroll" id="contact-section">
+        <h2 style="font-size:1.5rem;font-weight:700;font-family:var(--font-headline);margin-bottom:2rem;color:var(--primary);">Inquiry Form</h2>
+        <form id="contact-form" style="display:flex;flex-direction:column;gap:1.5rem;">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name</label>
+              <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Work Email</label>
+              <input type="email" id="email" name="email" class="form-input" placeholder="john@company.com" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="company">Company Name</label>
+            <input type="text" id="company" name="company" class="form-input" placeholder="Acme Corp"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project goals..." rows="4" required></textarea>
+          </div>
+          <div style="padding-top:0.5rem;">
+            <button type="submit" class="btn btn-primary btn-full btn-lg" id="submit-btn">Submit Request</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right Column: Calendar & Info -->
+      <div style="display:flex;flex-direction:column;gap:2rem;">
+        
+        <!-- Quick Schedule Card -->
+        <div class="schedule-card animate-on-scroll stagger-1">
+          <div style="position:relative;z-index:10;">
+            <span class="material-symbols-outlined" style="font-size:2.5rem;margin-bottom:1rem;display:block;font-variation-settings:'FILL' 1;">calendar_month</span>
+            <h3 style="font-size:1.5rem;font-weight:700;font-family:var(--font-headline);margin-bottom:0.5rem;">Book a Direct Slot</h3>
+            <p style="color:var(--primary-container);font-size:0.875rem;margin-bottom:1.5rem;line-height:1.6;">Skip the email back-and-forth. Schedule a 15-minute intro call directly with our strategy team.</p>
+            <a href="#" class="btn-schedule">
+              Check Availability
+              <span class="material-symbols-outlined" style="font-size:1.125rem;">arrow_forward</span>
+            </a>
+          </div>
+          <div class="decoration"></div>
+        </div>
+
+        <!-- Calendar View -->
+        <div class="calendar-card animate-on-scroll stagger-2">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+            <h4 style="font-weight:700;font-family:var(--font-headline);">Available Slots</h4>
+            <div style="display:flex;gap:0.25rem;">
+              <button style="padding:0.25rem;color:var(--outline);cursor:pointer;background:none;border:none;" aria-label="Previous month">
+                <span class="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button style="padding:0.25rem;color:var(--outline);cursor:pointer;background:none;border:none;" aria-label="Next month">
+                <span class="material-symbols-outlined">chevron_right</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Day Labels -->
+          <div class="calendar-grid" style="margin-bottom:1rem;">
+            <span class="calendar-day-label">M</span>
+            <span class="calendar-day-label">T</span>
+            <span class="calendar-day-label">W</span>
+            <span class="calendar-day-label">T</span>
+            <span class="calendar-day-label">F</span>
+            <span class="calendar-day-label">S</span>
+            <span class="calendar-day-label">S</span>
+          </div>
+
+          <!-- Days -->
+          <div class="calendar-grid">
+            <div class="calendar-day muted">28</div>
+            <div class="calendar-day muted">29</div>
+            <div class="calendar-day muted">30</div>
+            <div class="calendar-day active">01</div>
+            <div class="calendar-day">02</div>
+            <div class="calendar-day">03</div>
+            <div class="calendar-day">04</div>
+            <div class="calendar-day">05</div>
+            <div class="calendar-day">06</div>
+            <div class="calendar-day selected">07</div>
+            <div class="calendar-day">08</div>
+            <div class="calendar-day">09</div>
+            <div class="calendar-day">10</div>
+            <div class="calendar-day">11</div>
+            <div class="calendar-day">12</div>
+            <div class="calendar-day">13</div>
+            <div class="calendar-day">14</div>
+            <div class="calendar-day">15</div>
+            <div class="calendar-day">16</div>
+            <div class="calendar-day">17</div>
+            <div class="calendar-day">18</div>
+            <div class="calendar-day">19</div>
+            <div class="calendar-day">20</div>
+            <div class="calendar-day">21</div>
+            <div class="calendar-day">22</div>
+            <div class="calendar-day">23</div>
+            <div class="calendar-day">24</div>
+            <div class="calendar-day">25</div>
+            <div class="calendar-day">26</div>
+            <div class="calendar-day">27</div>
+            <div class="calendar-day">28</div>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="info-grid animate-on-scroll stagger-3">
+          <div class="info-card">
+            <span class="material-symbols-outlined">mail</span>
+            <p class="info-card-label">Email</p>
+            <p class="info-card-value">hello@icanvas.ai</p>
+          </div>
+          <div class="info-card">
+            <span class="material-symbols-outlined">location_on</span>
+            <p class="info-card-label">Global</p>
+            <p class="info-card-value">Remote First</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="/"><img src="/images/logo.jpg" alt="Logo" style="height:3rem;width:auto;margin-bottom:0.5rem;"/></a>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Privacy</a>
+        <a href="#" class="footer-link">Terms</a>
+        <a href="#" class="footer-link">API Status</a>
+      </div>
+      <p class="footer-copy">© 2024 Node and Nexus Ai. Built for scale.</p>
+    </div>
+  </footer>
+
+  <!-- ═══ MOBILE BOTTOM NAV ═══ -->
+  <nav class="bottom-nav">
+    <div class="bottom-nav-inner">
+      <a href="/" class="bottom-nav-item"><span class="material-symbols-outlined">home_app_logo</span><span>Home</span></a>
+      <a href="/services" class="bottom-nav-item"><span class="material-symbols-outlined">precision_manufacturing</span><span>Services</span></a>
+      <a href="/insights" class="bottom-nav-item"><span class="material-symbols-outlined">neurology</span><span>Insights</span></a>
+      <a href="/contact" class="bottom-nav-item active"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">mail</span><span>Contact</span></a>
+    </div>
+  </nav>
+
+  <script src="/app.js"></script>
+</body>
+</html>

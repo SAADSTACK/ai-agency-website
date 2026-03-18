@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact &amp; Consultation | Node and Nexus Ai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#001e2c",
+              "surface-dim": "#d9dadb",
+              "on-tertiary-container": "#badef6",
+              "on-secondary-fixed": "#00201a",
+              "surface-bright": "#f8f9fa",
+              "background": "#f8f9fa",
+              "on-primary-fixed": "#001847",
+              "surface-container-low": "#f3f4f5",
+              "surface": "#f8f9fa",
+              "inverse-primary": "#b2c5ff",
+              "error-container": "#ffdad6",
+              "on-background": "#191c1d",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#f0f1f2",
+              "surface-tint": "#0856cf",
+              "on-surface-variant": "#424654",
+              "primary-fixed-dim": "#b2c5ff",
+              "tertiary": "#274b5f",
+              "outline-variant": "#c3c6d6",
+              "on-error-container": "#93000a",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#00705f",
+              "secondary": "#006b5b",
+              "primary": "#0041a2",
+              "outline": "#737785",
+              "surface-variant": "#e1e3e4",
+              "on-primary-container": "#ced9ff",
+              "tertiary-fixed-dim": "#a7cbe3",
+              "on-primary": "#ffffff",
+              "on-surface": "#191c1d",
+              "secondary-fixed-dim": "#2adec0",
+              "primary-container": "#0b57d0",
+              "tertiary-container": "#406377",
+              "surface-container-highest": "#e1e3e4",
+              "on-secondary-fixed-variant": "#005144",
+              "surface-container-high": "#e7e8e9",
+              "on-error": "#ffffff",
+              "surface-container": "#edeeef",
+              "secondary-fixed": "#57fbdb",
+              "tertiary-fixed": "#c3e7ff",
+              "secondary-container": "#53f8d9",
+              "inverse-surface": "#2e3132",
+              "primary-fixed": "#dae2ff",
+              "on-tertiary-fixed-variant": "#264b5e",
+              "on-primary-fixed-variant": "#0040a1"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .primary-gradient-bg {
+        background: linear-gradient(135deg, #0041a2 0%, #006b5b 100%);
+      }
+      input:focus, textarea:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(83, 248, 217, 0.2);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-4"><img alt="Node and Nexus Ai Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCChaVOB58JfCgyh-yMSkDb8HCeIczSEXnlLEPm5eWjuEo30kQaBL3un9f4Y6C21cK0fvxEq1eOkT6ihjqrYd14i7Axov6kGNOknX4UGDJ1bDJOvoDiS5Y9-DQZSnTzh_WbGw7yKXnhkCAP32mBz_NCaYhrFfmJ2hTkmToUIiYGZeniPdO4ewiJdpW-dTM_SpDW3m-s5jFwqffvsJxK4AEYmCpnuA0t3Bma-4RhDOgF2a1XABaB6u2JruzDKQ1HfUGyA0xmHnRPvv7W"/></div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-500 hover:opacity-80 transition-opacity font-medium" href="#">Home</a>
+<a class="text-slate-500 hover:opacity-80 transition-opacity font-medium" href="#">Services</a>
+<a class="text-slate-500 hover:opacity-80 transition-opacity font-medium" href="#">Insights</a>
+<a class="text-blue-600 hover:opacity-80 transition-opacity font-medium" href="#">Contact</a>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="User profile avatar icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtfJ0es_ORn5HI3k9VlsycRmSCrPej9VHlGZ052hsjVepwO5Dp6zOR5j5tSv1hz6S6nNenG4wqfcv_09tb07VyMIr7xQETyHoxmkCjYHoYbp5GWyugFBO_jrtUwfVbxPsgb_m_fHUJBpCIL3zq5dGq3pwYfIqMFcQ5rQKKodgZ7EKyLvAPdFzEf3LC3ovcdtVng-fuTm0v78tv-Ztg5j6nZenN99xyfA1AmRplp1wDjwWwUOqYLGXN12MF8o7FKgu58olaiPuFbJvf"/>
+</div>
+</div>
+</header>
+<main class="pt-28 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-16">
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold tracking-tight text-on-background max-w-4xl mb-6">
+                Let's Build the Future Together.
+            </h1>
+<p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                Connect with our AI automation specialists to redefine your workflow. Whether you're looking for custom LLM integration or scaled process automation, we're ready to engineer your solution.
+            </p>
+</section>
+<!-- Dynamic Bento Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Contact Form Card -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-8 md:p-12 shadow-sm border border-outline-variant/10">
+<h2 class="text-2xl font-headline font-bold mb-8 text-primary">Inquiry Form</h2>
+<form action="#" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-label font-semibold uppercase tracking-widest text-secondary">Full Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 text-on-surface placeholder:text-outline/50 transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label font-semibold uppercase tracking-widest text-secondary">Work Email</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 text-on-surface placeholder:text-outline/50 transition-all" placeholder="john@company.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label font-semibold uppercase tracking-widest text-secondary">Company Name</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 text-on-surface placeholder:text-outline/50 transition-all" placeholder="Acme Corp" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-label font-semibold uppercase tracking-widest text-secondary">Message</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg px-4 py-4 text-on-surface placeholder:text-outline/50 transition-all" placeholder="Tell us about your project goals..." rows="4"></textarea>
+</div>
+<div class="pt-4">
+<button class="w-full primary-gradient-bg text-on-primary font-headline font-bold py-5 rounded-full shadow-lg hover:opacity-90 active:scale-[0.98] transition-all" type="submit">
+                            Submit Request
+                        </button>
+</div>
+</form>
+</div>
+<!-- Calendar & Info Column -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Quick Schedule Card -->
+<div class="bg-primary text-on-primary rounded-xl p-8 relative overflow-hidden group">
+<div class="relative z-10">
+<span class="material-symbols-outlined mb-4 text-4xl" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<h3 class="text-2xl font-headline font-bold mb-2">Book a Direct Slot</h3>
+<p class="text-primary-container mb-6 text-sm">Skip the email back-and-forth. Schedule a 15-minute intro call directly with our strategy team.</p>
+<a class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform active:scale-95" href="#">
+                            Check Availability
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<!-- Decorative background element -->
+<div class="absolute -bottom-12 -right-12 w-48 h-48 bg-white/10 rounded-full blur-3xl group-hover:bg-white/20 transition-all"></div>
+</div>
+<!-- Calendar View Minimal -->
+<div class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-headline font-bold text-on-surface">Available Slots</h4>
+<div class="flex gap-2">
+<button class="p-1 text-outline hover:text-primary"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-1 text-outline hover:text-primary"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-2 text-center mb-4">
+<span class="text-[10px] font-label font-bold text-outline">M</span>
+<span class="text-[10px] font-label font-bold text-outline">T</span>
+<span class="text-[10px] font-label font-bold text-outline">W</span>
+<span class="text-[10px] font-label font-bold text-outline">T</span>
+<span class="text-[10px] font-label font-bold text-outline">F</span>
+<span class="text-[10px] font-label font-bold text-outline">S</span>
+<span class="text-[10px] font-label font-bold text-outline">S</span>
+</div>
+<div class="grid grid-cols-7 gap-2">
+<!-- Simplified Calendar Grid -->
+<div class="h-8 flex items-center justify-center text-sm text-outline/30">28</div>
+<div class="h-8 flex items-center justify-center text-sm text-outline/30">29</div>
+<div class="h-8 flex items-center justify-center text-sm text-outline/30">30</div>
+<div class="h-8 flex items-center justify-center text-sm font-semibold bg-primary-container text-on-primary-container rounded-lg">01</div>
+<div class="h-8 flex items-center justify-center text-sm font-semibold hover:bg-surface-container-high rounded-lg cursor-pointer">02</div>
+<div class="h-8 flex items-center justify-center text-sm font-semibold hover:bg-surface-container-high rounded-lg cursor-pointer">03</div>
+<div class="h-8 flex items-center justify-center text-sm font-semibold hover:bg-surface-container-high rounded-lg cursor-pointer">04</div>
+<!-- ... more days ... -->
+<div class="h-8 flex items-center justify-center text-sm font-semibold hover:bg-surface-container-high rounded-lg cursor-pointer">05</div>
+<div class="h-8 flex items-center justify-center text-sm font-semibold hover:bg-surface-container-high rounded-lg cursor-pointer">06</div>
+<div class="h-8 flex items-center justify-center text-sm font-semibold bg-secondary text-on-secondary rounded-lg">07</div>
+<div class="h-8 flex items-center justify-center text-sm font-semibold hover:bg-surface-container-high rounded-lg cursor-pointer">08</div>
+<div class="h-8 flex items-center justify-center text-sm font-semibold hover:bg-surface-container-high rounded-lg cursor-pointer">09</div>
+<div class="h-8 flex items-center justify-center text-sm font-semibold hover:bg-surface-container-high rounded-lg cursor-pointer">10</div>
+<div class="h-8 flex items-center justify-center text-sm font-semibold hover:bg-surface-container-high rounded-lg cursor-pointer">11</div>
+</div>
+</div>
+<!-- Contact Info -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-6 rounded-lg bg-surface-container border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary mb-2">mail</span>
+<p class="text-xs font-label uppercase text-outline">Email</p>
+<p class="font-bold text-on-surface truncate">hello@icanvas.ai</p>
+</div>
+<div class="p-6 rounded-lg bg-surface-container border border-outline-variant/10">
+<span class="material-symbols-outlined text-secondary mb-2">location_on</span>
+<p class="text-xs font-label uppercase text-outline">Global</p>
+<p class="font-bold text-on-surface">Remote First</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[3rem] mt-12 bg-slate-50 border-t border-slate-200">
+<div class="flex flex-col items-center gap-6 px-8 py-12 mb-24 max-w-7xl mx-auto">
+<img alt="Node and Nexus Ai Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCChaVOB58JfCgyh-yMSkDb8HCeIczSEXnlLEPm5eWjuEo30kQaBL3un9f4Y6C21cK0fvxEq1eOkT6ihjqrYd14i7Axov6kGNOknX4UGDJ1bDJOvoDiS5Y9-DQZSnTzh_WbGw7yKXnhkCAP32mBz_NCaYhrFfmJ2hTkmToUIiYGZeniPdO4ewiJdpW-dTM_SpDW3m-s5jFwqffvsJxK4AEYmCpnuA0t3Bma-4RhDOgF2a1XABaB6u2JruzDKQ1HfUGyA0xmHnRPvv7W"/>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-teal-500 transition-colors font-inter text-sm" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-teal-500 transition-colors font-inter text-sm" href="#">Terms</a>
+<a class="text-slate-500 hover:text-teal-500 transition-colors font-inter text-sm" href="#">API Status</a>
+</div>
+<p class="font-inter text-sm text-slate-500 mt-4">© 2024 Node and Nexus Ai. Built for scale.</p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full rounded-t-[3rem] z-50 bg-white/70 backdrop-blur-xl border-t border-slate-100/10 shadow-[0_-8px_30px_rgb(0,0,0,0.04)]">
+<div class="flex justify-around items-center w-full px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">home_app_logo</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Services</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-5 py-2 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">neurology</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Insights</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-blue-50 text-blue-700 rounded-full px-5 py-2 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span>
+<span class="font-inter text-[10px] font-semibold uppercase tracking-widest mt-1">Contact</span>
+</a>
+</div>
+</nav>
+</body></html>

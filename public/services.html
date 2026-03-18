@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Services — Node and Nexus Ai</title>
+  <meta name="description" content="Tailored AI services including workflow automation, custom LLM training, and AI data insights. Bespoke intelligence architectures for enterprise."/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body class="page-transition">
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:1.5rem;">
+        <button class="menu-toggle" id="menu-toggle">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <a href="/" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+          <img src="/images/logo.jpg" alt="Node and Nexus Ai Logo" class="logo"/>
+          <span style="font-weight:700;font-size:1.25rem;color:var(--on-surface);white-space:nowrap;letter-spacing:0.02em;">Node & Nexus Ai</span>
+        </a>
+      </div>
+      <nav class="nav-desktop">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/services" class="nav-link active">Services</a>
+        <a href="/insights" class="nav-link">Insights</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-avatar">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBORh_iPqKt7wq3Or7ODKPrac1BXhC5xlKekjq6tkF9LrQGgKu_NqSPaN_-Ded12kB5FxmpmqXIyBxATh-KTusxxawOzXD2SCrfUTziyOkVcp4QiygBq4kbTXj_y_9WiBhpYSyF05MkT0bbKfQO71QskbmU_pAg1iN7SfL5VfX_Rsu54cr2pexlzSmT5Rs86xHXWXx3aazAc34q0T5N3LqLX1x595Xao2ysTk6jIXt1NZJv7sp9xjDhYFhfWCTqRO4Mi5ILkrPsu1t-" alt="Profile"/>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ MAIN CONTENT ═══ -->
+  <main style="padding-top:8rem;padding-bottom:6rem;" class="container">
+
+    <!-- ── Hero Section ── -->
+    <section style="margin-bottom:5rem;" class="animate-on-scroll">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:2rem;">
+        <div style="max-width:48rem;">
+          <span class="form-label" style="display:block;margin-bottom:1rem;">Core Capabilities</span>
+          <h1 style="font-size:clamp(2.5rem,7vw,4.5rem);font-weight:800;letter-spacing:-0.03em;line-height:1;margin-bottom:1.5rem;">
+            Tailored AI <span class="gradient-text">Services.</span>
+          </h1>
+          <p style="font-size:1.125rem;color:var(--on-surface-variant);max-width:36rem;line-height:1.7;">
+            We don't just implement tools; we craft bespoke intelligence architectures that integrate seamlessly into your existing operational DNA.
+          </p>
+        </div>
+        <div style="width:12rem;height:12rem;border-radius:var(--radius-md);background:var(--surface-container-low);transform:rotate(3deg);position:relative;overflow:hidden;display:none;" class="lg-show">
+          <div style="position:absolute;inset:0;opacity:0.2;background:var(--gradient-primary);"></div>
+          <span class="material-symbols-outlined" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:4rem;color:var(--primary);opacity:0.4;">auto_awesome</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Services Grid ── -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;">
+      
+      <!-- Service Card 1 -->
+      <div class="card animate-on-scroll stagger-1" id="service-workflow">
+        <div class="card-icon">
+          <span class="material-symbols-outlined">hub</span>
+        </div>
+        <h3 class="card-title">Workflow Automation</h3>
+        <p class="card-text">
+          Orchestrate complex business processes using autonomous agents that bridge the gap between legacy systems and modern AI efficiency.
+        </p>
+        <a href="#" class="card-link">
+          Learn More <span class="material-symbols-outlined" style="font-size:0.875rem;">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="card animate-on-scroll stagger-2" id="service-llm">
+        <div class="card-icon">
+          <span class="material-symbols-outlined">model_training</span>
+        </div>
+        <h3 class="card-title">Custom LLM Training</h3>
+        <p class="card-text">
+          Fine-tune Large Language Models on your proprietary data to ensure domain-specific accuracy, brand-aligned tone, and enterprise-grade security.
+        </p>
+        <a href="#" class="card-link">
+          Learn More <span class="material-symbols-outlined" style="font-size:0.875rem;">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="card animate-on-scroll stagger-3" id="service-insights">
+        <div class="card-icon">
+          <span class="material-symbols-outlined">insights</span>
+        </div>
+        <h3 class="card-title">AI Data Insights</h3>
+        <p class="card-text">
+          Transform unstructured data into actionable intelligence through advanced NLP pipelines and predictive behavioral modeling.
+        </p>
+        <a href="#" class="card-link">
+          Learn More <span class="material-symbols-outlined" style="font-size:0.875rem;">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ── Asymmetric Detail Section ── -->
+    <section style="margin-top:8rem;" class="animate-on-scroll">
+      <div class="detail-grid">
+        <div class="detail-visual">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4Y3YwSih8BlB5PEf1TgUOpgQcx-wWDKv5QLdmEtJ2tGfFELchbyWdSC5x7cGkRLPipZfXKyVI9C9_mV-DX3zpbmC1Gxr09i2WNn1zvYmdiABxjhHzeM9t1cgBKBwHlESPpZK-ujEjtnWg7EYGGsROzUPGSQFY-Wm40DpD6iswWzfa6uaZzzNMWKC2SrA93n9Mjl8sgZdXWksLxI2rIkLiGFdwHpL7e9GQw3PbpIxy0GP9O8ty0A6Mdw7kxw_Tcieb65JPha8zszex" alt="Futuristic AI neural network visualization"/>
+          <div class="overlay"></div>
+          <div class="glass-label">
+            <p style="color:var(--primary);font-weight:700;font-size:0.875rem;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">Next Gen Architecture</p>
+            <p style="font-size:1.125rem;font-weight:500;">Scalable frameworks built for tomorrow's challenges.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:2rem;">
+          <h2 style="font-size:clamp(2rem,4vw,2.5rem);font-weight:800;letter-spacing:-0.02em;">Beyond The Algorithm.</h2>
+          <p style="color:var(--on-surface-variant);line-height:1.7;">
+            Our approach prioritizes the human element. We believe AI should amplify talent, not replace it. Our "Node and Nexus Ai" methodology ensures that every automation serves a strategic purpose.
+          </p>
+          <div>
+            <a href="/contact" class="btn btn-primary">Schedule an Audit</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a href="/"><img src="/images/logo.jpg" alt="Logo" style="height:3rem;width:auto;margin-bottom:0.5rem;"/></a>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Privacy</a>
+        <a href="#" class="footer-link">Terms</a>
+        <a href="#" class="footer-link">API Status</a>
+      </div>
+      <p class="footer-copy">© 2024 Node and Nexus Ai. Built for scale.</p>
+    </div>
+  </footer>
+
+  <!-- ═══ MOBILE BOTTOM NAV ═══ -->
+  <nav class="bottom-nav">
+    <div class="bottom-nav-inner">
+      <a href="/" class="bottom-nav-item"><span class="material-symbols-outlined">home_app_logo</span><span>Home</span></a>
+      <a href="/services" class="bottom-nav-item active"><span class="material-symbols-outlined">precision_manufacturing</span><span>Services</span></a>
+      <a href="/insights" class="bottom-nav-item"><span class="material-symbols-outlined">neurology</span><span>Insights</span></a>
+      <a href="/contact" class="bottom-nav-item"><span class="material-symbols-outlined">mail</span><span>Contact</span></a>
+    </div>
+  </nav>
+
+  <script src="/app.js"></script>
+</body>
+</html>
