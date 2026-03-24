@@ -81,19 +81,27 @@ function initContactForm() {
     const data = Object.fromEntries(formData);
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://formspree.io/f/xvzwlzwj', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify(data)
       });
 
-      const result = await res.json();
-      
-      if (result.success) {
-        showToast(result.message, 'success');
+      if (res.ok) {
+        showToast('Thank you for your message! We will get back to you soon.', 'success');
         form.reset();
       } else {
-        showToast(result.error || 'Something went wrong.', 'error');
+        let errorMsg = 'Something went wrong.';
+        try {
+          const result = await res.json();
+          if (result.errors) {
+            errorMsg = result.errors.map(e => e.message).join(', ');
+          }
+        } catch(e) {}
+        showToast(errorMsg, 'error');
       }
     } catch (err) {
       showToast('Network error. Please try again.', 'error');
