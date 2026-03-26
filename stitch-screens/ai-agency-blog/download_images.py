@@ -21,12 +21,12 @@ IMAGES = {
     "image-9.jpg": "https://lh3.googleusercontent.com/aida-public/AB6AXuBVeMCXK1n1nrJmuazqkfbee8VtGrB--NA8gb1OooH2EEX86RLAQrlkC6l_LMy41227uuVfdVsAWgN7jXGMuS5VFmwWYHVIkojjGuK15MYTOmOd4QFqi-3_WtxMz4gaMWeH0HgIV1TSdYs0v34UAnWmTIY4fHTlQN7B4VV_kfPO8-FA3EARyrWJk5hKOcIAWKxLcazZSZsg_n5wb_lhcqHEtPb_TDbxkslij1oWmWGS6U2qICtcygCuK1sZ_8bBVNbvVzA7xQTp6Xof",
     "image-10.jpg": "https://lh3.googleusercontent.com/aida-public/AB6AXuD0inRlmEzqd5p1QMlg6TOTRByLOq7swhloOqobgJkMk0_DOJb8wnwrzhqXMKSeSoDbNU11Q38nZROctU0-r4nyxZuE1fT28KAlGVXWP4gHTOJP7oZU_gpwyFP7I3IiMJStQEN-MDU0k9YbfHOvRsKsD8PXae43U9y2yt3SjkdjUaMFmItkQ6d3ZBYalu_1w8o1EHNvvVR0y7pIodsMGQSEsFOjcKqRyRD0WEJL68_bVg_CQ7ZmlA_G4RZPYYJcxuXbcXgAgi4pfEFI",
     "image-11.jpg": "https://lh3.googleusercontent.com/aida-public/AB6AXuCsNGRMHY0TKTfFhWrU8Y6Y1lZPIJOsCKgEtvuwaz3y6b1GXGSGSOUNk5yhEzqjC_hF3neEF79zYJcolV9EPngjIwHOKSli8iV6OQmEzGUvoY6Lhvy_UQGNG_7NLQQKUrTv6kd_1PFEKWLnpkP1zQrUtNCgTVmNDSdJezVB6BvLourdCpRlAKWOZ4D2QJ9LsVC3NMIEMOVZdLNjqRXynX5hGBtWmanH1fad6O6XyVP86bkMBdT03f4ALGO-G7hWP2ivUckwTjHyHJdV",
-    "image-12.jpg": "https://lh3.googleusercontent.com/aida-public/AB6AXuCG2hjFPPhxddbhtX_BuU4hQNvc4sC4WjgCAndqBUuCsqRpz4ZQKXqqlK2FxsAcA8SlfDgcTFRZwYfLt55b6PAvXyio086vE_f5333Y3MqoMZCDGz0UnQ43kT0y8swJ6s-97Vkf5Jfb96OyhzJWcqwGbDImoXf6yR0cyCbjcpNge3O0s2PeyOiCX5gVX7cE7Ia8kChMuX7CuENFil4WZgeNaMqExjx83zNoptipovpjzRIbA_jeX3fXVNHAsTElMSIk26NF2xXSO92Z",
+    "image-12.jpg": "https://lh3.googleusercontent.com/aida-public/AB6AXuCG2hjFPPhxddbhtX_BuU4hQNvc4sC4WjgCAndqBUuCsqRpz4ZQKXqqlK2FxsAcA8SlfDgcTFRZwYfLt55b6PAvXyio086vE_f5333Y3MqoMZCDGz0UnQ43kT0y8swS6s-97Vkf5Jfb96OyhzJWcqwGbDImoXf6yR0cyCbjcpNge3O0s2PeyOiCX5gVX7cE7Ia8kChMuX7CuENFil4WZgeNaMqExjx83zNoptipovpjzRIbA_jeX3fXVNHAsTElMSIk26NF2xXSO92Z",
     "image-13.jpg": "https://lh3.googleusercontent.com/aida-public/AB6AXuAk1HKskvI8lJ719uSP86HSWNqxyyfow-CcYc84beYlI3lcxzALSssXAmKUD01i3Av2sg6lXmxawiRH9_1_86Zlqxad3WJV1R7fRnwi7YSmzt9hDi23bRqZ0MS0QZiXohF6oysfEvHFI2JdYIExTA_pcX6Ki5-tkztKFlRgLEUWTrhq_mJJfXS1LVS_aLNhXGIWTudPRtb3wJqfxIR3AJaFJ6ceN4NlsRXA9o_sX2nWjUFpDw5dtMMOwmXpPKFd4EEYl-AmMkHrmRmw",
     "image-14.jpg": "https://lh3.googleusercontent.com/aida-public/AB6AXuANNUqmnu2xAVVOYqkLq9N1XR7u6YSxKom7K8tS6sIzo3pzrfaKm3H_h5QFX1fIIr90lS51BFJbdXcizurQ9NzVnDj041qMzhjcondbc2M3uY0I2-VQMX0wyiDjnk9nzCf5c2TtSqMfT8Gfy76SivUbN_5OBKWqVLkdgGBPOq2ebjGoZuobEC4ok6hOSztqAxvXvcKHqEyqvWn_zMVAJ9mT9gCf4FqhyUI9odsoKSlnjkpwnEB1C92eqL9oH8sjqU0Gzn78kqjZ_DZU"
 }
 
-def download_images(output_dir="images"):
+def download_images(output_dir="public/images/ai-agency-blog"):
     """Download all images to the specified directory."""
     os.makedirs(output_dir, exist_ok=True)
     
@@ -39,17 +39,17 @@ def download_images(output_dir="images"):
         
         # Skip if already exists
         if os.path.exists(filepath):
-            print(f"✓ {filename} (already exists)")
+            print(f"Already exists: {filename}")
             successful += 1
             continue
         
         try:
-            print(f"⬇ Downloading {filename}...", end=" ")
+            print(f"Downloading {filename}...", end=" ")
             urllib.request.urlretrieve(url, filepath)
-            print("✓")
+            print("Done")
             successful += 1
         except Exception as e:
-            print(f"✗ Error: {e}")
+            print(f"Error: {e}")
             failed += 1
     
     print(f"\n{'='*50}")
