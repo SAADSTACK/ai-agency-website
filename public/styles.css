@@ -427,6 +427,37 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-4px);
 }
 
+/* Blog Grid and Card Styles */
+.blog-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.blog-card {
+  background: var(--surface-container-low);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-slow);
+}
+
+.blog-card:hover {
+  background: var(--surface-container-highest);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+
+.blog-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.blog-badge {
+  margin-bottom: 0.5rem;
+}
+
+
 .card-icon {
   width: 3.5rem;
   height: 3.5rem;

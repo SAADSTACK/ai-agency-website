@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogs – Node and Nexus AI</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body class="page-transition">
+  <!-- Header (reuse existing header via server include or copy) -->
+  <!-- For simplicity, we include the same header markup as index.html -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:1.5rem;">
+        <button class="menu-toggle" id="menu-toggle"><span class="material-symbols-outlined">menu</span></button>
+        <a href="/" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+          <img src="/images/logo.jpg" alt="Node and Nexus Ai Logo" class="logo" />
+          <span style="font-weight:700;font-size:1.25rem;color:var(--on-surface);white-space:nowrap;letter-spacing:0.02em;">Node &amp; Nexus Ai</span>
+        </a>
+      </div>
+      <nav class="nav-desktop" id="main-nav">
+        <a href="/" class="nav-link active">Home</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/insights" class="nav-link">Insights</a>
+        <a href="/blogs" class="nav-link">Blogs</a>
+        <a href="/contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-avatar"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7txjaVpnU0iIQNWzsTR20hmP184E1_zdKLJEniayJDQD06W2s5kQysU-gCu0bYTqR55O4opkv2vfhpL1uqRBH-u6btwHJVcIumqJxhLfLBJvMTvwfq3X1M0l1n_Iz5U1OdJqe15UbU2dyTvFJCxFlZIPbU13HnN5qN9Ph6jwqoy88WwVzd-rE5aJxV3lZGjjO23Wny6eGT9Mpd9YNczjPxbLZd0yqlrUPtp90am_mkvWEpysTp0QvpANapMnkOlkgOZyaSsQreQyf" alt="Profile" /></div>
+    </div>
+  </header>
+
+  <main style="padding-top: 6rem; min-height: 100vh;">
+    <section id="blogs" class="container section">
+      <h2 class="font-headline" style="margin-bottom:2rem;">Latest Insights</h2>
+      <div class="blog-grid">
+        <!-- Card 1 -->
+        <article class="blog-card glass">
+          <img src="/blog_placeholder.png" alt="Blog 1" class="blog-image" />
+          <span class="badge blog-badge"><span class="badge-dot"></span>Automation</span>
+          <h3 class="card-title">The Future of n8n Automation</h3>
+          <p class="card-text">Explore how n8n is reshaping workflow automation with AI‑driven triggers and smart error handling.</p>
+          <a href="#" class="btn btn-primary btn-sm">Read More</a>
+        </article>
+        <!-- Card 2 -->
+        <article class="blog-card glass">
+          <img src="/blog_placeholder.png" alt="Blog 2" class="blog-image" />
+          <span class="badge blog-badge"><span class="badge-dot"></span>AI News</span>
+          <h3 class="card-title">Generative AI in 2026</h3>
+          <p class="card-text">A look ahead at the breakthroughs expected in generative models and their impact on enterprises.</p>
+          <a href="#" class="btn btn-primary btn-sm">Read More</a>
+        </article>
+        <!-- Card 3 -->
+        <article class="blog-card glass">
+          <img src="/blog_placeholder.png" alt="Blog 3" class="blog-image" />
+          <span class="badge blog-badge"><span class="badge-dot"></span>Research</span>
+          <h3 class="card-title">AI‑Powered Data Pipelines</h3>
+          <p class="card-text">How AI is automating data ingestion, validation, and transformation in modern pipelines.</p>
+          <a href="#" class="btn btn-primary btn-sm">Read More</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (reuse from index.html) -->
+  <footer class="site-footer" style="background-color:var(--surface-container); padding: 4rem 1.5rem 2rem; margin-top: 4rem; border-top: 1px solid var(--surface-variant);">
+    <!-- Footer content omitted for brevity; you can copy from index.html -->
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
