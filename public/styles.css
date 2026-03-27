@@ -223,6 +223,30 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
+.header-brand-cluster {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.brand-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--on-surface);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
 .logo {
   height: 2.5rem;
   width: auto;
@@ -1686,6 +1710,17 @@ textarea.form-input {
 
 @media (max-width: 767px) and (min-width: 481px) {
   /* Tablet-sized phones */
+  .header-brand-cluster {
+    gap: 0.75rem;
+  }
+
+  .brand-title {
+    font-size: 1rem;
+    max-width: 9.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .header-actions {
     gap: 0.75rem;
   }
@@ -1714,6 +1749,21 @@ textarea.form-input {
 
   .logo {
     height: 2rem;
+  }
+
+  .header-brand-cluster {
+    gap: 0.5rem;
+  }
+
+  .brand-link {
+    gap: 0.5rem;
+  }
+
+  .brand-title {
+    font-size: 0.92rem;
+    max-width: 7.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   /* Mobile header action buttons */
@@ -1777,6 +1827,11 @@ textarea.form-input {
   /* Extra small screens */
   .header-inner {
     padding: 0.5rem;
+  }
+
+  .brand-title {
+    font-size: 0.85rem;
+    max-width: 6.5rem;
   }
 
   .mobile-nav-header {
