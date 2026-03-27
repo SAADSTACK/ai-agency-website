@@ -1,0 +1,371 @@
+/* ═══════════════════════════════════════════════════
+   Authentication Styles - Node and Nexus Ai
+   Login, Signup & Authentication Components
+   ═══════════════════════════════════════════════════ */
+
+/* ── Auth Container Layout ── */
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--background);
+  padding: 2rem;
+}
+
+.auth-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  width: 100%;
+  max-width: 1200px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--surface);
+  animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Form Section ── */
+.auth-form-section {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--surface-container-lowest);
+}
+
+.auth-header {
+  margin-bottom: 2.5rem;
+}
+
+/* ── Form Styling ── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  letter-spacing: 0.01em;
+}
+
+.form-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--outline-variant);
+  border-radius: var(--radius-md);
+  background: var(--surface-container-lowest);
+  transition: all var(--transition-base);
+  overflow: hidden;
+}
+
+.form-input-wrapper:focus-within {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 65, 162, 0.08);
+  background: var(--surface-container-lowest);
+}
+
+.form-icon {
+  position: absolute;
+  left: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--on-surface-variant);
+  pointer-events: none;
+}
+
+.form-input {
+  flex: 1;
+  padding: 0.875rem;
+  padding-left: 2.75rem;
+  border: none;
+  background: transparent;
+  color: var(--on-surface);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: color var(--transition-fast);
+}
+
+.form-input::placeholder {
+  color: var(--on-surface-variant);
+  opacity: 0.6;
+}
+
+.form-input:autofill,
+.form-input:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 1000px var(--surface-container-lowest) !important;
+  -webkit-text-fill-color: var(--on-surface) !important;
+}
+
+.form-toggle-password,
+.form-toggle-confirm-password {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: var(--on-surface-variant);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color var(--transition-fast);
+  font-size: 1.25rem;
+}
+
+.form-toggle-password:hover,
+.form-toggle-confirm-password:hover {
+  color: var(--primary);
+}
+
+.form-error {
+  font-size: 0.8rem;
+  color: var(--error);
+  display: none;
+  margin-top: 0.25rem;
+}
+
+.form-error.show {
+  display: block;
+}
+
+/* ── Password Strength Indicator ── */
+.password-strength {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.strength-bar {
+  height: 4px;
+  background: var(--surface-container-high);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 2px;
+  background: var(--error);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.strength-fill.weak {
+  width: 25%;
+  background: var(--error);
+}
+
+.strength-fill.fair {
+  width: 50%;
+  background: #ff9800;
+}
+
+.strength-fill.good {
+  width: 75%;
+  background: #4caf50;
+}
+
+.strength-fill.strong {
+  width: 100%;
+  background: var(--secondary);
+}
+
+.strength-text {
+  font-size: 0.75rem;
+  color: var(--on-surface-variant);
+  font-weight: 500;
+}
+
+/* ── Checkbox & Label ── */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--on-surface);
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+.checkbox-label a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+/* ── Form Alerts ── */
+.form-alert {
+  padding: 0.875rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  display: none;
+  animation: slideInDown 0.3s ease;
+}
+
+.form-alert.show {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.alert-error {
+  background: rgba(186, 26, 26, 0.08);
+  color: var(--error);
+  border: 1px solid rgba(186, 26, 26, 0.2);
+}
+
+.alert-success {
+  background: rgba(76, 175, 80, 0.08);
+  color: #2e7d32;
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Decoration Section ── */
+.auth-decoration {
+  position: relative;
+  background: var(--gradient-primary);
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.decoration-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+}
+
+.decoration-1 {
+  width: 300px;
+  height: 300px;
+  background: #ffffff;
+  top: -100px;
+  right: -100px;
+}
+
+.decoration-2 {
+  width: 250px;
+  height: 250px;
+  background: #ffffff;
+  bottom: -80px;
+  left: -80px;
+}
+
+.decoration-content {
+  position: relative;
+  z-index: 2;
+  max-width: 350px;
+}
+
+/* ── Button Styles ── */
+.btn-loader {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Responsive Design ── */
+@media (max-width: 768px) {
+  .auth-container {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-decoration {
+    display: none;
+  }
+
+  .auth-form-section {
+    padding: 2rem;
+  }
+
+  .auth-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .auth-form {
+    gap: 1rem;
+  }
+
+  .form-label {
+    font-size: 0.8125rem;
+  }
+
+  .form-input {
+    font-size: 0.9rem;
+  }
+}
+
+/* ── Loading State ── */
+.form-input:disabled,
+.form-input:disabled::placeholder {
+  background: var(--surface-container);
+  color: var(--on-surface-variant);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Dark Mode Support (Optional) ── */
+@media (prefers-color-scheme: dark) {
+  .auth-form-section {
+    background: var(--surface-container);
+  }
+
+  .auth-container {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+}

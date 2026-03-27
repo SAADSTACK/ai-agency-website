@@ -235,6 +235,12 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
+.header-actions {
+  display: none;
+  gap: 1rem;
+  align-items: center;
+}
+
 .nav-link {
   font-family: var(--font-headline);
   font-weight: 600;
@@ -405,6 +411,16 @@ h1, h2, h3, h4, h5, h6 {
 .btn-lg {
   font-size: 1.125rem;
   padding: 1.25rem 2.5rem;
+}
+
+.btn-md {
+  font-size: 0.95rem;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-sm {
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
 }
 
 .btn-full {
@@ -1231,6 +1247,10 @@ textarea.form-input {
 /* Tablet (768px+) */
 @media (min-width: 768px) {
   .nav-desktop {
+    display: flex;
+  }
+
+  .header-actions {
     display: flex;
   }
 

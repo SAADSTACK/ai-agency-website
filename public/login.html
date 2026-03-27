@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In — Node and Nexus Ai</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css"/>
+  <link rel="stylesheet" href="/auth.css"/>
+</head>
+<body>
+
+  <!-- ═══ AUTH CONTAINER ═══ -->
+  <div class="auth-wrapper">
+    <div class="auth-container">
+      <!-- Form Section -->
+      <div class="auth-form-section">
+        <div class="auth-header">
+          <a href="/" style="display:flex;align-items:center;gap:0.5rem;text-decoration:none;margin-bottom:2rem;">
+            <img src="/images/logo.jpg" alt="Node and Nexus Ai Logo" style="width:2rem;height:2rem;border-radius:0.5rem;"/>
+            <span style="font-weight:700;color:var(--on-surface);">Node & Nexus Ai</span>
+          </a>
+          
+          <h1 style="font-size:2rem;font-weight:800;color:var(--on-surface);margin-bottom:0.5rem;">Welcome Back</h1>
+          <p style="font-size:0.95rem;color:var(--on-surface-variant);">Sign in to access your dashboard and manage projects</p>
+        </div>
+
+        <!-- Login Form -->
+        <form class="auth-form" id="loginForm">
+          <!-- Email Input -->
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <div class="form-input-wrapper">
+              <span class="material-symbols-outlined form-icon">mail</span>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="form-input" 
+                placeholder="your@example.com"
+                required
+              />
+            </div>
+            <span class="form-error" id="emailError"></span>
+          </div>
+
+          <!-- Password Input -->
+          <div class="form-group">
+            <label for="password" class="form-label">Password</label>
+            <div class="form-input-wrapper">
+              <span class="material-symbols-outlined form-icon">lock</span>
+              <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                class="form-input" 
+                placeholder="••••••••"
+                required
+              />
+              <button type="button" class="form-toggle-password" id="togglePassword">
+                <span class="material-symbols-outlined">visibility</span>
+              </button>
+            </div>
+            <span class="form-error" id="passwordError"></span>
+          </div>
+
+          <!-- Remember Me & Forgot Password -->
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;">
+            <label class="checkbox-label">
+              <input type="checkbox" id="rememberMe" name="rememberMe"/>
+              <span>Remember me</span>
+            </label>
+            <a href="#" style="font-size:0.875rem;color:var(--primary);text-decoration:none;font-weight:500;">Forgot password?</a>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary btn-lg" id="loginBtn" style="width:100%;margin-bottom:1.5rem;">
+            <span class="btn-text">Sign In</span>
+            <span class="material-symbols-outlined btn-loader" id="btnLoader" style="display:none;">refresh</span>
+          </button>
+
+          <!-- Error Message -->
+          <div class="form-alert alert-error" id="formError" style="display:none;"></div>
+
+          <!-- Success Message -->
+          <div class="form-alert alert-success" id="formSuccess" style="display:none;"></div>
+        </form>
+
+        <!-- Sign Up Link -->
+        <div style="text-align:center;margin-top:2rem;padding-top:2rem;border-top:1px solid var(--outline-variant);">
+          <p style="font-size:0.95rem;color:var(--on-surface-variant);">
+            Don't have an account? 
+            <a href="/signup" style="color:var(--primary);font-weight:600;text-decoration:none;">Create one</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Decoration Section -->
+      <div class="auth-decoration">
+        <div class="decoration-circle decoration-1"></div>
+        <div class="decoration-circle decoration-2"></div>
+        <div class="decoration-content">
+          <h2 style="font-size:1.75rem;font-weight:800;color:#ffffff;margin-bottom:1rem;line-height:1.3;">
+            Join Our AI Revolution
+          </h2>
+          <p style="font-size:1rem;color:rgba(255,255,255,0.85);line-height:1.6;margin-bottom:2rem;">
+            Unlock the power of intelligent automation and transform your business with cutting-edge AI solutions designed for scale.
+          </p>
+          <ul style="list-style:none;gap:1rem;display:flex;flex-direction:column;">
+            <li style="display:flex;gap:0.75rem;align-items:flex-start;">
+              <span class="material-symbols-outlined" style="color:#57fbdb;font-size:1.5rem;">check_circle</span>
+              <span style="color:rgba(255,255,255,0.9);">Advanced AI & Automation</span>
+            </li>
+            <li style="display:flex;gap:0.75rem;align-items:flex-start;">
+              <span class="material-symbols-outlined" style="color:#57fbdb;font-size:1.5rem;">check_circle</span>
+              <span style="color:rgba(255,255,255,0.9);">24/7 Expert Support</span>
+            </li>
+            <li style="display:flex;gap:0.75rem;align-items:flex-start;">
+              <span class="material-symbols-outlined" style="color:#57fbdb;font-size:1.5rem;">check_circle</span>
+              <span style="color:rgba(255,255,255,0.9);">Enterprise-Grade Security</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/auth.js"></script>
+</body>
+</html>

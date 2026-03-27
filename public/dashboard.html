@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard — Node and Nexus Ai</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles.css"/>
+  <link rel="stylesheet" href="/dashboard.css"/>
+</head>
+<body>
+
+  <!-- ═══ HEADER ═══ -->
+  <header class="dashboard-header">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:1.5rem;">
+        <button class="menu-toggle" id="menu-toggle">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <a href="/" style="display:flex;align-items:center;gap:0.75rem;text-decoration:none;">
+          <img src="/images/logo.jpg" alt="Node and Nexus Ai Logo" class="logo"/>
+          <span style="font-weight:700;font-size:1.25rem;color:var(--on-surface);white-space:nowrap;letter-spacing:0.02em;">Node & Nexus Ai</span>
+        </a>
+      </div>
+      
+      <div style="display:flex;align-items:center;gap:2rem;">
+        <div class="search-bar" style="display:none;flex:1;max-width:300px;">
+          <span class="material-symbols-outlined" style="position:absolute;left:0.75rem;color:var(--on-surface-variant);">search</span>
+          <input type="text" placeholder="Search..." style="width:100%;padding:.75rem;padding-left:2.5rem;border:1px solid var(--outline-variant);border-radius:var(--radius-md);background:var(--surface);color:var(--on-surface);"/>
+        </div>
+        
+        <div style="display:flex;align-items:center;gap:1rem;">
+          <button class="icon-btn" title="Notifications">
+            <span class="material-symbols-outlined">notifications</span>
+            <span class="notification-badge">3</span>
+          </button>
+          
+          <div class="user-menu">
+            <button class="user-avatar-btn" id="userMenuBtn">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7txjaVpnU0iIQNWzsTR20hmP184E1_zdKLJEniayJDQD06W2s5kQysU-gCu0bYTqR55O4opkv2vfhpL1uqRBH-u6btwHJVcIumqJxhLfLBJvMTvwfq3X1M0l1n_Iz5U1OdJqe15UbU2dyTvFJCxFlZIPbU13HnN5qN9Ph6jwqoy88WwVzd-rE5aJxV3lZGjjO23Wny6eGT9Mpd9YNczjPxbLZd0yqlrUPtp90am_mkvWEpysTp0QvpANapMnkOlkgOZyaSsQreQyf" alt="Profile"/>
+            </button>
+            
+            <div class="user-dropdown" id="userDropdown" style="display:none;">
+              <div class="dropdown-header">
+                <div style="flex:1;">
+                  <p id="userFullName" style="font-weight:600;color:var(--on-surface);margin-bottom:0.25rem;">Loading...</p>
+                  <p id="userEmail" style="font-size:0.8rem;color:var(--on-surface-variant);">Loading...</p>
+                </div>
+              </div>
+              
+              <div class="dropdown-divider"></div>
+              
+              <a href="#" class="dropdown-item">
+                <span class="material-symbols-outlined">settings</span>
+                <span>Settings</span>
+              </a>
+              <a href="#" class="dropdown-item">
+                <span class="material-symbols-outlined">help</span>
+                <span>Help & Support</span>
+              </a>
+              
+              <div class="dropdown-divider"></div>
+              
+              <button class="dropdown-item logout-btn" id="logoutBtn">
+                <span class="material-symbols-outlined">logout</span>
+                <span>Logout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ MAIN CONTENT ═══ -->
+  <main class="dashboard-main">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar" id="sidebar">
+      <nav class="sidebar-nav">
+        <a href="/dashboard" class="nav-item active">
+          <span class="material-symbols-outlined">dashboard</span>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="material-symbols-outlined">work</span>
+          <span>Projects</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="material-symbols-outlined">smart_toy</span>
+          <span>AI Workflows</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="material-symbols-outlined">bar_chart</span>
+          <span>Analytics</span>
+        </a>
+        <a href="#" class="nav-item">
+          <span class="material-symbols-outlined">settings</span>
+          <span>Settings</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Content Area -->
+    <div class="dashboard-content">
+      <div class="container">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+          <div>
+            <h1 style="font-size:2rem;font-weight:800;color:var(--on-surface);margin-bottom:0.5rem;">
+              Welcome, <span id="welcomeName">User</span>! 👋
+            </h1>
+            <p style="font-size:1rem;color:var(--on-surface-variant);">Here's what's happening with your projects today.</p>
+          </div>
+          
+          <a href="#" class="btn btn-primary btn-md" style="white-space:nowrap;">
+            <span class="material-symbols-outlined" style="font-size:1rem;">add</span>
+            New Project
+          </a>
+        </section>
+
+        <!-- Stats Grid -->
+        <section class="stats-grid">
+          <!-- Active Projects -->
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(0,65,162,0.1);color:var(--primary);">
+              <span class="material-symbols-outlined">folder_open</span>
+            </div>
+            <div>
+              <p class="stat-label">Active Projects</p>
+              <p class="stat-value">7</p>
+            </div>
+          </div>
+
+          <!-- AI Workflows -->
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(0,107,91,0.1);color:var(--secondary);">
+              <span class="material-symbols-outlined">smart_toy</span>
+            </div>
+            <div>
+              <p class="stat-label">AI Workflows</p>
+              <p class="stat-value">12</p>
+            </div>
+          </div>
+
+          <!-- API Calls -->
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(39,75,95,0.1);color:var(--tertiary);">
+              <span class="material-symbols-outlined">api</span>
+            </div>
+            <div>
+              <p class="stat-label">API Calls (This Month)</p>
+              <p class="stat-value">2,450</p>
+            </div>
+          </div>
+
+          <!-- Storage Used -->
+          <div class="stat-card">
+            <div class="stat-icon" style="background:rgba(255,152,0,0.1);color:#ff9800;">
+              <span class="material-symbols-outlined">cloud_upload</span>
+            </div>
+            <div>
+              <p class="stat-label">Storage Used</p>
+              <p class="stat-value">450 MB</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recent Projects -->
+        <section class="recent-section">
+          <h2 style="font-size:1.5rem;font-weight:700;color:var(--on-surface);margin-bottom:1.5rem;">Recent Projects</h2>
+          
+          <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+              <div class="project-header">
+                <div>
+                  <h3>E-commerce AI Assistant</h3>
+                  <p class="project-type">Active • LLM</p>
+                </div>
+                <button class="menu-dots">
+                  <span class="material-symbols-outlined">more_vert</span>
+                </button>
+              </div>
+              <p class="project-description">Custom AI chatbot for customer support and product recommendations.</p>
+              <div class="project-stats">
+                <span><span class="material-symbols-outlined">trending_up</span>↑ 23% usage</span>
+                <span class="stat-badge">In Progress</span>
+              </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+              <div class="project-header">
+                <div>
+                  <h3>Data Processing Pipeline</h3>
+                  <p class="project-type">Active • Automation</p>
+                </div>
+                <button class="menu-dots">
+                  <span class="material-symbols-outlined">more_vert</span>
+                </button>
+              </div>
+              <p class="project-description">Automated data extraction and transformation workflow with AI validation.</p>
+              <div class="project-stats">
+                <span><span class="material-symbols-outlined">check_circle</span>5 tasks completed</span>
+                <span class="stat-badge success">Completed</span>
+              </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card">
+              <div class="project-header">
+                <div>
+                  <h3>Sentiment Analysis Tool</h3>
+                  <p class="project-type">Development • ML</p>
+                </div>
+                <button class="menu-dots">
+                  <span class="material-symbols-outlined">more_vert</span>
+                </button>
+              </div>
+              <p class="project-description">Real-time sentiment analysis for social media monitoring and analytics.</p>
+              <div class="project-stats">
+                <span><span class="material-symbols-outlined">schedule</span>Est. 5 days</span>
+                <span class="stat-badge warning">In Development</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="/dashboard.js"></script>
+</body>
+</html>
