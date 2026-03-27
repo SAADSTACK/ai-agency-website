@@ -1548,6 +1548,28 @@ textarea.form-input {
 
 /* Desktop Grid */
 @media (min-width: 1024px) {
+  .header-inner {
+    position: relative;
+  }
+
+  .nav-desktop {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  .header-brand-cluster {
+    flex: 0 1 auto;
+    margin-right: auto;
+  }
+
+  .header-actions,
+  .header-avatar {
+    margin-left: auto;
+  }
+
   .hero-grid {
     display: grid;
     grid-template-columns: 7fr 5fr;
