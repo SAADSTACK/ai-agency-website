@@ -94,13 +94,34 @@ async function handleSupabaseLogin(e) {
     });
 
     if (error) {
+      // Check if email is not confirmed
+      if (error.message.includes('Email not confirmed')) {
+        showFormError('Please verify your email to login. Check your inbox for the verification link.');
+        return;
+      }
       showFormError(error.message || 'Login failed. Please try again.');
       return;
     }
 
-    // Success - session is automatically managed by Supabase
+    // Store credentials for potential MFA challenge
+    sessionStorage.setItem('pending_auth_session', JSON.stringify({
+      email: email,
+      session: data.session
+    }));
+
+    // Check if user has MFA enabled
+    const { data: factors, error: mfaError } = await window.supabaseClient.auth.mfa.listFactors();
+    
+    if (!mfaError && factors && factors.totp && factors.totp.length > 0) {
+      // User has MFA enabled - redirect to OTP verification
+      sessionStorage.setItem('mfa_required', 'true');
+      window.location.href = '/verify-otp';
+      return;
+    }
+
+    // No MFA - proceed to dashboard
     localStorage.setItem('supabase_session', JSON.stringify(data.session));
-    showFormSuccess('Login successful! Redirecting...');
+    showToast('Login successful! Redirecting...', 'success');
     
     setTimeout(() => {
       window.location.href = '/dashboard';
@@ -175,31 +196,44 @@ async function handleSupabaseSignup(e) {
       return;
     }
 
-    // Success - show confirmation message
-    if (data.user && !data.session) {
-      // Email confirmation required
-      showFormSuccess('Account created! Check your email to confirm your address.');
-      setTimeout(() => {
-        // Show check email message
-        document.getElementById('signupForm').style.display = 'none';
-        const checkEmailDiv = document.createElement('div');
-        checkEmailDiv.innerHTML = `
-          <div style="text-align:center;padding:2rem;">
-            <span class="material-symbols-outlined" style="font-size:4rem;color:var(--primary);margin-bottom:1rem;display:block;">mail_outline</span>
-            <h2 style="color:var(--on-surface);margin-bottom:0.5rem;">Check Your Email</h2>
-            <p style="color:var(--on-surface-variant);margin-bottom:2rem;">We've sent a confirmation link to ${email}</p>
-            <p style="color:var(--on-surface-variant);font-size:0.9rem;">Click the link to complete your signup and start using Node & Nexus Ai.</p>
-          </div>
-        `;
-        document.querySelector('.auth-form-section').appendChild(checkEmailDiv);
-      }, 1500);
-    } else if (data.session) {
-      // Auto-confirmed (rare case)
+    // Success - check if session is immediately available or needs email verification
+    if (data.session) {
+      // Email confirmation is OFF or user is auto-logged in - session available immediately
       localStorage.setItem('supabase_session', JSON.stringify(data.session));
-      showFormSuccess('Account created successfully! Redirecting...');
+      showToast('Account created successfully! Redirecting...', 'success');
       setTimeout(() => {
         window.location.href = '/dashboard';
       }, 1500);
+    } else if (data.user && !data.session) {
+      // Email confirmation is required - user must verify email first
+      document.getElementById('signupForm').style.display = 'none';
+      const verifyEmailDiv = document.createElement('div');
+      verifyEmailDiv.className = 'verify-email-container';
+      verifyEmailDiv.innerHTML = `
+        <div style="text-align:center;padding:3rem 2rem;max-width:400px;margin:0 auto;">
+          <div style="margin-bottom:2rem;">
+            <span class="material-symbols-outlined" style="font-size:5rem;color:var(--primary);">mail_outline</span>
+          </div>
+          <h2 style="font-size:1.75rem;font-weight:700;color:var(--on-surface);margin-bottom:0.5rem;">Verify Your Email</h2>
+          <p style="color:var(--on-surface-variant);font-size:1rem;margin-bottom:2rem;line-height:1.6;">
+            We've sent a verification link to <strong style="color:var(--on-surface);">${email}</strong>
+          </p>
+          <p style="color:var(--on-surface-variant);font-size:0.95rem;margin-bottom:2rem;line-height:1.6;">
+            Click the link in your email to confirm your account and get started with Node & Nexus AI.
+          </p>
+          <div style="background-color:var(--surface-variant);padding:1.5rem;border-radius:8px;margin-bottom:2rem;">
+            <p style="color:var(--on-surface-variant);font-size:0.9rem;margin:0;">
+              <strong>Didn't receive an email?</strong><br/>
+              Check your spam folder or <a href="/signup" style="color:var(--primary);text-decoration:none;font-weight:600;">try signing up again</a>
+            </p>
+          </div>
+          <a href="/" class="btn btn-primary" style="display:inline-block;padding:0.75rem 2rem;text-decoration:none;">
+            Return to Home
+          </a>
+        </div>
+      `;
+      document.querySelector('.auth-form-section').appendChild(verifyEmailDiv);
+      showToast('Account created! Please check your email to verify your address.', 'info');
     }
 
   } catch (error) {
@@ -335,3 +369,26 @@ async function redirectIfLoggedIn() {
 
 // Auto-redirect on page load
 redirectIfLoggedIn();
+
+// ── Toast notification using Toastify ──
+function showToast(message, type = 'success') {
+  if (typeof Toastify !== 'undefined') {
+    Toastify({
+      text: message,
+      duration: 3000,
+      gravity: 'top',
+      position: 'center',
+      backgroundColor:
+        type === 'success'
+          ? '#10b981'
+          : type === 'error'
+          ? '#ef4444'
+          : type === 'info'
+          ? '#3b82f6'
+          : '#f59e0b',
+      stopOnFocus: true
+    }).showToast();
+  } else {
+    console.log(`[${type}] ${message}`);
+  }
+}
