@@ -52,8 +52,8 @@ function updateAuthUI(session) {
     }
   } else {
     // User is logged out - show login/signup buttons
-    if (loginBtn) loginBtn.style.display = 'flex';
-    if (signupBtn) signupBtn.style.display = 'flex';
+    if (loginBtn) loginBtn.style.display = 'inline-flex';
+    if (signupBtn) signupBtn.style.display = 'inline-flex';
     if (loggedInActions) loggedInActions.style.display = 'none';
   }
 }
