@@ -636,6 +636,18 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--surface-container-highest);
 }
 
+/* Avoid double-tap behavior on touch devices where first tap triggers :hover only */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary:hover {
+    transform: none;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .btn-secondary:hover {
+    background: var(--surface-container-high);
+  }
+}
+
 .btn-outline {
   background: var(--surface-container-lowest);
   color: var(--primary);

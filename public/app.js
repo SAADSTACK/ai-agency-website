@@ -190,6 +190,31 @@ function initProgressBars() {
   });
 }
 
+// ── Auth CTA links should navigate on first click/tap ──
+function initAuthCTALinks() {
+  const authLinks = document.querySelectorAll('#loginBtnHeader, #signupBtnHeader, #loginBtnMobile, #signupBtnMobile');
+  if (!authLinks.length) return;
+
+  const navigate = (link) => {
+    const href = link.getAttribute('href');
+    if (!href) return;
+    window.location.assign(href);
+  };
+
+  authLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigate(link);
+    });
+
+    // Touch fallback for mobile browsers that may consume the first tap as hover/focus.
+    link.addEventListener('touchend', (e) => {
+      e.preventDefault();
+      navigate(link);
+    }, { passive: false });
+  });
+}
+
 // ── Mobile menu ──
 function initMobileMenu() {
   const menuToggle = document.getElementById('menu-toggle');
@@ -291,6 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNav();
   animateCounters();
   initProgressBars();
+  initAuthCTALinks();
   initMobileMenu();
   initContactForm();
   
