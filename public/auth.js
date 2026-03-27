@@ -323,12 +323,34 @@ function logout() {
 }
 
 // ── Redirect logged-in users away from auth pages ──
-function redirectIfLoggedIn() {
-  if (checkAuthStatus()) {
-    const currentPage = window.location.pathname;
-    if (currentPage === '/login' || currentPage === '/signup') {
+async function redirectIfLoggedIn() {
+  const token = getAuthToken();
+  const currentPage = window.location.pathname;
+  const isAuthPage = currentPage === '/login' || currentPage === '/signup';
+
+  if (!token || !isAuthPage) return;
+
+  try {
+    const response = await fetch('/api/auth/me', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+
+    if (!response.ok) {
+      // Token is stale/invalid, clear and allow user to access auth pages.
+      localStorage.removeItem('authToken');
+      localStorage.removeItem('userEmail');
+      return;
+    }
+
+    const data = await response.json();
+    if (data.success) {
       window.location.href = '/dashboard';
     }
+  } catch (error) {
+    // Keep user on auth page if validation fails due to network issues.
+    console.error('Auth validation failed:', error);
   }
 }
 
