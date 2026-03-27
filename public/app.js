@@ -192,17 +192,97 @@ function initProgressBars() {
 
 // ── Mobile menu ──
 function initMobileMenu() {
-  const toggle = document.getElementById('menu-toggle');
-  const mobileNav = document.getElementById('mobile-nav');
+  const menuToggle = document.getElementById('menu-toggle');
+  const closeBtn = document.getElementById('closeMenuBtn');
+  const mobileNav = document.getElementById('mobileNav');
+  const overlay = document.getElementById('mobileNavOverlay');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
   
-  if (!toggle || !mobileNav) return;
+  if (!menuToggle || !mobileNav) return;
   
-  toggle.addEventListener('click', () => {
-    mobileNav.classList.toggle('open');
-    const icon = toggle.querySelector('.material-symbols-outlined');
-    icon.textContent = mobileNav.classList.contains('open') ? 'close' : 'menu';
+  // Open mobile menu
+  menuToggle.addEventListener('click', () => {
+    mobileNav.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
   });
+  
+  // Close mobile menu
+  const closeMobileMenu = () => {
+    mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+  
+  closeBtn.addEventListener('click', closeMobileMenu);
+  overlay.addEventListener('click', closeMobileMenu);
+  
+  // Close menu when clicking on a link
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+  
+  // Close menu on ESC key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+      closeMobileMenu();
+    }
+  });
+  
+  // Update mobile menu for logged in users
+  updateMobileMenuAuthStatus();
 }
+
+// ── Update mobile menu auth status ──
+function updateMobileMenuAuthStatus() {
+  const token = localStorage.getItem('authToken');
+  const mobileAuthSection = document.getElementById('mobileAuthSection');
+  const mobileUserSection = document.getElementById('mobileUserSection');
+  const mobileUserName = document.getElementById('mobileUserName');
+  const mobileUserEmail = document.getElementById('mobileUserEmail');
+  const mobileLogoutBtn = document.getElementById('mobileLogoutBtn');
+  
+  // Make sure elements exist
+  if (!mobileAuthSection || !mobileUserSection) return;
+  
+  if (token) {
+    // User is logged in - show user section, hide auth buttons
+    mobileAuthSection.style.display = 'none !important';
+    mobileUserSection.style.display = 'flex !important';
+    mobileUserSection.style.flexDirection = 'column';
+    
+    // Try to fetch user info
+    fetch('/api/auth/me', {
+      headers: { 'Authorization': `Bearer ${token}` }
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success && data.user) {
+        mobileUserName.textContent = data.user.fullName;
+        mobileUserEmail.textContent = data.user.email;
+      }
+    })
+    .catch(err => console.error('Error fetching user:', err));
+    
+    // Logout handler for mobile
+    if (mobileLogoutBtn) {
+      mobileLogoutBtn.onclick = (e) => {
+        e.preventDefault();
+        localStorage.removeItem('authToken');
+        localStorage.removeItem('userEmail');
+        window.location.href = '/login';
+      };
+    }
+  } else {
+    // User is not logged in - show auth buttons, hide user section
+    mobileAuthSection.style.display = 'flex !important';
+    mobileAuthSection.style.flexDirection = 'column';
+    mobileUserSection.style.display = 'none !important';
+  }
+}
+
+// Listen for auth changes
+window.addEventListener('storage', updateMobileMenuAuthStatus);
 
 // ── Initialize everything ──
 document.addEventListener('DOMContentLoaded', () => {
@@ -213,4 +293,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initProgressBars();
   initMobileMenu();
   initContactForm();
+  
+  // Update mobile menu auth status on load
+  setTimeout(() => {
+    updateMobileMenuAuthStatus();
+  }, 100);
 });
