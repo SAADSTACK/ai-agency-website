@@ -111,7 +111,7 @@ async function handleLogin(e) {
     
     showFormSuccess('Login successful! Redirecting...');
     setTimeout(() => {
-      window.location.href = '/dashboard';
+      window.location.href = '/';
     }, 1500);
 
   } catch (error) {
@@ -189,7 +189,7 @@ async function handleSignup(e) {
     
     showFormSuccess('Account created successfully! Redirecting...');
     setTimeout(() => {
-      window.location.href = '/dashboard';
+      window.location.href = '/';
     }, 1500);
 
   } catch (error) {
@@ -346,7 +346,7 @@ async function redirectIfLoggedIn() {
 
     const data = await response.json();
     if (data.success) {
-      window.location.href = '/dashboard';
+      window.location.href = '/';
     }
   } catch (error) {
     // Keep user on auth page if validation fails due to network issues.

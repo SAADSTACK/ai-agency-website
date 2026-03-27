@@ -246,21 +246,6 @@ app.get('/blog', (req, res) => res.sendFile(path.join(__dirname, 'stitch-screens
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, 'public', 'login.html')));
 app.get('/signup', (req, res) => res.sendFile(path.join(__dirname, 'public', 'signup.html')));
 
-// Protected Dashboard Route
-app.get('/dashboard', (req, res) => {
-  const token = req.cookies.authToken || req.headers.authorization?.split(' ')[1];
-  if (!token) {
-    return res.redirect('/login');
-  }
-  
-  try {
-    jwt.verify(token, JWT_SECRET);
-    res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
-  } catch (error) {
-    res.redirect('/login');
-  }
-});
-
 // Catch-all for clean URLs
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 
@@ -270,7 +255,6 @@ app.listen(PORT, () => {
   console.log(`║  http://localhost:${PORT}      ║`);
   console.log(`║                                           ║`);
   console.log(`║  🔐 Authentication System: ACTIVE        ║`);
-  console.log(`║  📊 Dashboard: /dashboard                ║`);
-  console.log(`║  🔑 Login: /login | Signup: /signup      ║`);
+  console.log(`║   Login: /login | Signup: /signup      ║`);
   console.log(`╚═══════════════════════════════════════════╝\n`);
 });

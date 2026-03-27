@@ -48,7 +48,6 @@ app.get('/contact', (req, res) => res.sendFile(path.join(__dirname, '../public',
 app.get('/blogs', (req, res) => res.sendFile(path.join(__dirname, '../public', 'blogs.html')));
 app.get('/login', (req, res) => res.sendFile(path.join(__dirname, '../public', 'login.html')));
 app.get('/signup', (req, res) => res.sendFile(path.join(__dirname, '../public', 'signup.html')));
-app.get('/dashboard', (req, res) => res.sendFile(path.join(__dirname, '../public', 'dashboard.html')));
 app.get('/blog', (req, res) => res.sendFile(path.join(__dirname, '../stitch-screens', 'ai-agency-blog', 'blog.html')));
 
 // Catch-all for clean URLs
