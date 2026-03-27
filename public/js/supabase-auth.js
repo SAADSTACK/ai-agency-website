@@ -92,7 +92,7 @@ async function handleLogin(e) {
 
     // Store session and redirect
     localStorage.setItem('supabase_session', JSON.stringify(data.session));
-    window.location.href = '/dashboard';
+    window.location.href = '/';
 
   } catch (error) {
     console.error('Login error:', error);
@@ -154,8 +154,8 @@ async function handleSignup(e) {
     // If session available immediately, login success
     if (data.session) {
       localStorage.setItem('supabase_session', JSON.stringify(data.session));
-      alert('Account created! Redirecting to dashboard...');
-      window.location.href = '/dashboard';
+      alert('Account created! Redirecting home...');
+      window.location.href = '/';
     } else if (data.user) {
       // User created but needs email verification
       alert('Account created! Please check your email to verify your address.');
@@ -179,7 +179,7 @@ async function redirectIfLoggedIn() {
     const currentPage = window.location.pathname;
 
     if (session && (currentPage === '/login' || currentPage === '/signup')) {
-      window.location.href = '/dashboard';
+      window.location.href = '/';
     }
   } catch (error) {
     console.error('Auth check error:', error);
