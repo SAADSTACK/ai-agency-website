@@ -50,15 +50,16 @@
         <a href="/contact" class="nav-link">Contact</a>
       </nav>
       
-      <div class="header-actions" id="headerActions">
+      <div class="header-actions" id="headerActions" style="display:flex;align-items:center;gap:1rem;">
         <!-- Will be populated by auth.js based on login status -->
         <a href="/login" class="btn btn-secondary btn-sm" id="loginBtnHeader">Sign In</a>
         <a href="/signup" class="btn btn-primary btn-sm" id="signupBtnHeader">Get Started</a>
-        <button class="btn btn-secondary btn-sm" id="logoutBtnHeader" style="display:none;">Logout</button>
-      </div>
-      
-      <div class="header-avatar" id="headerAvatar" style="display:none;">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7txjaVpnU0iIQNWzsTR20hmP184E1_zdKLJEniayJDQD06W2s5kQysU-gCu0bYTqR55O4opkv2vfhpL1uqRBH-u6btwHJVcIumqJxhLfLBJvMTvwfq3X1M0l1n_Iz5U1OdJqe15UbU2dyTvFJCxFlZIPbU13HnN5qN9Ph6jwqoy88WwVzd-rE5aJxV3lZGjjO23Wny6eGT9Mpd9YNczjPxbLZd0yqlrUPtp90am_mkvWEpysTp0QvpANapMnkOlkgOZyaSsQreQyf" alt="Profile"/>
+        <div style="display:none;align-items:center;gap:1rem;" id="loggedInActions">
+          <button class="btn btn-secondary btn-sm" id="logoutBtnHeader">Logout</button>
+          <div class="header-avatar" id="headerAvatar">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7txjaVpnU0iIQNWzsTR20hmP184E1_zdKLJEniayJDQD06W2s5kQysU-gCu0bYTqR55O4opkv2vfhpL1uqRBH-u6btwHJVcIumqJxhLfLBJvMTvwfq3X1M0l1n_Iz5U1OdJqe15UbU2dyTvFJCxFlZIPbU13HnN5qN9Ph6jwqoy88WwVzd-rE5aJxV3lZGjjO23Wny6eGT9Mpd9YNczjPxbLZd0yqlrUPtp90am_mkvWEpysTp0QvpANapMnkOlkgOZyaSsQreQyf" alt="Profile"/>
+          </div>
+        </div>
       </div>
     </div>
     

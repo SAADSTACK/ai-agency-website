@@ -34,27 +34,27 @@ function updateAuthUI(session) {
   const signupBtn = document.getElementById('signupBtnHeader');
   const logoutBtn = document.getElementById('logoutBtnHeader');
   const headerAvatar = document.getElementById('headerAvatar');
-  const headerActions = document.getElementById('headerActions');
+  const loggedInActions = document.getElementById('loggedInActions');
   
   if (session) {
-    // User is logged in
+    // User is logged in - show logout and avatar together
     if (loginBtn) loginBtn.style.display = 'none';
     if (signupBtn) signupBtn.style.display = 'none';
+    if (loggedInActions) {
+      loggedInActions.style.display = 'flex';
+    }
     if (logoutBtn) {
-      logoutBtn.style.display = 'flex';
       logoutBtn.onclick = handleLogout;
     }
     if (headerAvatar) {
-      headerAvatar.style.display = 'flex';
       const userEmail = session.user?.email || 'User';
       headerAvatar.title = userEmail;
     }
   } else {
-    // User is logged out
+    // User is logged out - show login/signup buttons
     if (loginBtn) loginBtn.style.display = 'flex';
     if (signupBtn) signupBtn.style.display = 'flex';
-    if (logoutBtn) logoutBtn.style.display = 'none';
-    if (headerAvatar) headerAvatar.style.display = 'none';
+    if (loggedInActions) loggedInActions.style.display = 'none';
   }
 }
 
