@@ -65,10 +65,10 @@ async function handleLogout() {
     console.error('Logout error:', error);
     showToast('Logout failed', 'error');
   } else {
-    showToast('Logged out successfully', 'success');
+    console.log('Logged out successfully');
     setTimeout(() => {
-      window.location.href = '/login';
-    }, 1000);
+      window.location.href = '/';
+    }, 500);
   }
 }
 
