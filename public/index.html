@@ -23,6 +23,9 @@
   
   <!-- Styles -->
   <link rel="stylesheet" href="/styles.css"/>
+  
+  <!-- Supabase Library -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body class="page-transition">
 
@@ -51,6 +54,7 @@
         <!-- Will be populated by auth.js based on login status -->
         <a href="/login" class="btn btn-secondary btn-sm" id="loginBtnHeader">Sign In</a>
         <a href="/signup" class="btn btn-primary btn-sm" id="signupBtnHeader">Get Started</a>
+        <button class="btn btn-secondary btn-sm" id="logoutBtnHeader" style="display:none;">Logout</button>
       </div>
       
       <div class="header-avatar" id="headerAvatar" style="display:none;">
@@ -342,5 +346,9 @@
       }
     })();
   </script>
+  
+  <!-- Supabase Auth Scripts -->
+  <script src="/js/supabase-client.js"></script>
+  <script src="/js/session-protection.js"></script>
 </body>
 </html>
