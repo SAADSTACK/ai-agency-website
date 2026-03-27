@@ -889,7 +889,7 @@ textarea.form-input {
    ══════════════════════════════════════════ */
 .hero {
   position: relative;
-  padding: 6rem 0 4rem;
+  padding: 3.5rem 0 4rem;
   overflow: hidden;
 }
 
@@ -1509,7 +1509,7 @@ textarea.form-input {
   }
 
   .hero {
-    padding: 8rem 0 5rem;
+    padding: 4.5rem 0 5rem;
   }
 
   .hero-visual {
