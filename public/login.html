@@ -17,9 +17,6 @@
   <link rel="stylesheet" href="/auth.css"/>
   
   <!-- Supabase Library -->
-    <!-- Toastify CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
@@ -89,15 +86,8 @@
 
           <!-- Submit Button -->
           <button type="submit" class="btn btn-primary btn-lg" id="loginBtn" style="width:100%;margin-bottom:1.5rem;">
-            <span class="btn-text">Sign In</span>
-            <span class="material-symbols-outlined btn-loader" id="btnLoader" style="display:none;">refresh</span>
+            Sign In
           </button>
-
-          <!-- Error Message -->
-          <div class="form-alert alert-error" id="formError" style="display:none;"></div>
-
-          <!-- Success Message -->
-          <div class="form-alert alert-success" id="formSuccess" style="display:none;"></div>
         </form>
 
         <!-- Sign Up Link -->
@@ -138,9 +128,6 @@
       </div>
     </div>
   </div>
-
-  <!-- Toastify JS -->
-  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <script src="/js/supabase-client.js"></script>
   <script src="/js/supabase-auth.js"></script>

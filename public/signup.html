@@ -17,9 +17,6 @@
   <link rel="stylesheet" href="/auth.css"/>
   
   <!-- Supabase Library -->
-    <!-- Toastify CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
@@ -36,7 +33,7 @@
           </a>
           
           <h1 style="font-size:2rem;font-weight:800;color:var(--on-surface);margin-bottom:0.5rem;">Create Account</h1>
-          <p style="font-size:0.95rem;color:var(--on-surface-variant);">Join us today and start your AI transformation journey</p>
+          <p style="font-size:0.95rem;color:var(--on-surface-variant);">Join us and start building with AI</p>
         </div>
 
         <!-- Signup Form -->
@@ -52,10 +49,8 @@
                 name="fullName" 
                 class="form-input" 
                 placeholder="John Doe"
-                required
               />
             </div>
-            <span class="form-error" id="fullNameError"></span>
           </div>
 
           <!-- Email Input -->
@@ -73,21 +68,6 @@
               />
             </div>
             <span class="form-error" id="emailError"></span>
-          </div>
-
-          <!-- Company Input -->
-          <div class="form-group">
-            <label for="company" class="form-label">Company (Optional)</label>
-            <div class="form-input-wrapper">
-              <span class="material-symbols-outlined form-icon">business</span>
-              <input 
-                type="text" 
-                id="company" 
-                name="company" 
-                class="form-input" 
-                placeholder="Your Company"
-              />
-            </div>
           </div>
 
           <!-- Password Input -->
@@ -130,31 +110,10 @@
             <span class="form-error" id="confirmPasswordError"></span>
           </div>
 
-          <!-- Password Strength Indicator -->
-          <div class="password-strength" id="passwordStrength">
-            <div class="strength-bar">
-              <div class="strength-fill" id="strengthFill"></div>
-            </div>
-            <span class="strength-text" id="strengthText">Password strength: Weak</span>
-          </div>
-
-          <!-- Terms & Conditions -->
-          <label class="checkbox-label" style="margin-bottom:1.5rem;">
-            <input type="checkbox" id="terms" name="terms" required/>
-            <span>I agree to the <a href="#" style="color:var(--primary);text-decoration:none;">Terms of Service</a> and <a href="#" style="color:var(--primary);text-decoration:none;">Privacy Policy</a></span>
-          </label>
-
           <!-- Submit Button -->
           <button type="submit" class="btn btn-primary btn-lg" id="signupBtn" style="width:100%;margin-bottom:1.5rem;">
-            <span class="btn-text">Create Account</span>
-            <span class="material-symbols-outlined btn-loader" id="btnLoader" style="display:none;">refresh</span>
+            Create Account
           </button>
-
-          <!-- Error Message -->
-          <div class="form-alert alert-error" id="formError" style="display:none;"></div>
-
-          <!-- Success Message -->
-          <div class="form-alert alert-success" id="formSuccess" style="display:none;"></div>
         </form>
 
         <!-- Sign In Link -->
@@ -175,29 +134,26 @@
             Start Your AI Journey
           </h2>
           <p style="font-size:1rem;color:rgba(255,255,255,0.85);line-height:1.6;margin-bottom:2rem;">
-            Get access to advanced AI tools and automation solutions that will transform how your business operates.
+            Get access to AI tools and solutions that transform your business.
           </p>
           <ul style="list-style:none;gap:1rem;display:flex;flex-direction:column;">
             <li style="display:flex;gap:0.75rem;align-items:flex-start;">
               <span class="material-symbols-outlined" style="color:#57fbdb;font-size:1.5rem;">check_circle</span>
-              <span style="color:rgba(255,255,255,0.9);">Free Starter Plan Included</span>
+              <span style="color:rgba(255,255,255,0.9);">Quick Setup</span>
             </li>
             <li style="display:flex;gap:0.75rem;align-items:flex-start;">
               <span class="material-symbols-outlined" style="color:#57fbdb;font-size:1.5rem;">check_circle</span>
-              <span style="color:rgba(255,255,255,0.9);">Instant Account Setup</span>
+              <span style="color:rgba(255,255,255,0.9);">Secure & Private</span>
             </li>
             <li style="display:flex;gap:0.75rem;align-items:flex-start;">
               <span class="material-symbols-outlined" style="color:#57fbdb;font-size:1.5rem;">check_circle</span>
-              <span style="color:rgba(255,255,255,0.9);">Dedicated Onboarding Support</span>
+              <span style="color:rgba(255,255,255,0.9);">Built with Supabase</span>
             </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Toastify JS -->
-  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <script src="/js/supabase-client.js"></script>
   <script src="/js/supabase-auth.js"></script>

@@ -70,59 +70,17 @@
                 <span>Help & Support</span>
               </a>
               
-              <!-- Security Section -->
-              <section class="dashboard-section" style="margin-top:3rem;">
-                <div class="section-header" style="display:flex;align-items:center;gap:0.75rem;margin-bottom:2rem;">
-                  <span class="material-symbols-outlined" style="font-size:1.75rem;color:var(--primary);">verified_user</span>
-                  <h2 style="font-size:1.5rem;font-weight:700;color:var(--on-surface);margin:0;">Security & Privacy</h2>
-                </div>
-                <div class="settings-grid" style="display:grid;gap:1.5rem;">
-                  <!-- Two-Factor Authentication Card -->
-                  <div class="settings-card" style="background:var(--surface);border:1px solid var(--outline);border-radius:12px;padding:1.5rem;transition:all 0.3s ease;">
-                    <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem;">
-                      <div style="flex:1;">
-                        <h3 style="font-size:1.1rem;font-weight:600;color:var(--on-surface);margin:0 0 0.5rem 0;">Two-Factor Authentication</h3>
-                        <p style="color:var(--on-surface-variant);font-size:0.9rem;margin:0;">Add an extra layer of security to your account with 2FA/MFA</p>
-                      </div>
-                      <span class="material-symbols-outlined" style="font-size:2rem;color:var(--primary);">lock</span>
-                    </div>
-                    <div style="background:var(--surface-variant);padding:1rem;border-radius:8px;margin-bottom:1.5rem;">
-                      <p style="color:var(--on-surface-variant);font-size:0.9rem;margin:0;display:flex;align-items:center;gap:0.5rem;">
-                        <span id="mfaStatusIcon" class="material-symbols-outlined" style="color:#ef4444;">close</span>
-                        Status: <strong id="mfaStatusText" style="color:#ef4444;">Not Enabled</strong>
-                      </p>
-                    </div>
-                    <button id="toggleMfaBtn" class="btn btn-primary" style="width:100%;display:flex;align-items:center;justify-content:center;gap:0.75rem;">
-                      <span class="material-symbols-outlined">security</span>
-                      <span>Enable 2FA</span>
-                    </button>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </main>
               <div class="dropdown-divider"></div>
-        <!-- Toastify CSS & JS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
               
               <button class="dropdown-item logout-btn" id="logoutBtn">
                 <span class="material-symbols-outlined">logout</span>
                 <span>Logout</span>
-        <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
-        <!-- QR Code Library -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/2.0.0/qrious.min.js"></script>
-
-        <!-- MFA Setup Scripts -->
-        <script src="/js/mfa-setup.js"></script>
               </button>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
+    </header>
 
   <!-- ═══ MAIN CONTENT ═══ -->
   <main class="dashboard-main">
