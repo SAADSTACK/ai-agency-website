@@ -1549,25 +1549,41 @@ textarea.form-input {
 /* Desktop Grid */
 @media (min-width: 1024px) {
   .header-inner {
-    position: relative;
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) auto minmax(220px, 1fr);
+    align-items: center;
+    column-gap: 1.5rem;
   }
 
   .nav-desktop {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    transform: none;
+    grid-column: 2;
+    justify-self: center;
     justify-content: center;
     white-space: nowrap;
   }
 
   .header-brand-cluster {
-    flex: 0 1 auto;
-    margin-right: auto;
+    grid-column: 1;
+    justify-self: start;
+    margin-right: 0;
   }
 
-  .header-actions,
+  .header-actions {
+    grid-column: 3;
+    justify-self: end;
+    margin-left: 0;
+    position: relative;
+    z-index: 2;
+  }
+
   .header-avatar {
-    margin-left: auto;
+    grid-column: 3;
+    justify-self: end;
+    margin-left: 0;
+    position: relative;
+    z-index: 2;
   }
 
   .hero-grid {
